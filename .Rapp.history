@@ -1,0 +1,99 @@
+4-4
+9-0
+@#
+#
+<<MainModels, results='asis', cache=FALSE>>=#
+require(stargazer)#
+mainmodels<-stargazer(model1, model2, model3, model4, model5, model6,#
+          digits = 2,#
+          style = "apsr",#
+          font.size = "small",#
+          covariate.labels=c("Democracy level", "Democracy change", "GDP per capita", "GDP per capita change",#
+                             "Interpolated", "Spline1", "Spline2", "Trade level", "FDI level", "FPI level",#
+                            "Trade change", "FDI change", "FPI change", "Liberalization average")#
+          )
+require(Zelig)#
+#
+modelvars<-read.csv("~/Dropbox/Projects/globalization_media_freedom/data/out_modelvars.csv")#
+#
+require(rms)#
+modelvars$spline<-rcs(as.numeric(modelvars$year),3)#
+#
+### Model 1, Baseline ####
+model1vars<-subset(modelvars, select=c("fp", "lpolity2",  "ldpolity2", "lrgdpch", "lgrgdpch", "interp", "spline"))#
+model1vars<-model1vars[complete.cases(model1vars),]#
+model1<-zelig(fp ~ lpolity2 + ldpolity2 + lrgdpch + lgrgdpch + interp + spline,#
+              model="logit",#
+              robust=TRUE,#
+              data=model1vars,#
+              cite=F)#
+#
+model1classif<-prop.table(table(model1$result$fitted.values>.5, model1$result$y))#
+model1correct<-(model1classif[1,1] + model1classif[2,2])#
+#
+### Model 1, IPE levels and changes ####
+#
+model2vars<-subset(modelvars, select=c("fp", "interp", "lpolity2", "ldpolity2", "lrgdpch", "lgrgdpch", "lopenk", "ldopenk", "lfdiinflow", "lfdiinward", "lfpi", "lfpistock", "spline"))#
+model2vars<-model2vars[complete.cases(model2vars),]#
+model2<-zelig(fp ~ lpolity2 + ldpolity2 + lrgdpch + lgrgdpch + interp + spline + lopenk + lfdiinward + lfpistock + ldopenk + lfdiinflow + lfpi,#
+                 model="logit",#
+                 robust=TRUE,#
+                 data=model2vars,#
+                 cite=F)#
+#
+model2classif<-prop.table(table(model2$result$fitted.values>.5, model2$result$y))#
+model2correct<-(model2classif[1,1] + model2classif[2,2])#
+#
+### Model3, considering  multicollinearity of neoliberalism ####
+model3vars<-subset(modelvars, select=c("fp", "lrgdpch", "lgrgdpch", "lopenk", "ldopenk", "lfdiinward", "lfpistock", "lfpi", "lfdiinflow", "lpolity2", "ldpolity2", "ldeconglob", "interp", "spline"))#
+model3vars<-model3vars[complete.cases(model3vars),]#
+model3<-zelig(fp ~ lpolity2 + ldpolity2 + lrgdpch + lgrgdpch + interp + spline + lopenk + lfdiinward + lfpistock + ldopenk + ldeconglob,#
+              model="logit",#
+              robust=TRUE,#
+              data=model3vars,#
+              cite=F)#
+#
+model3classif<-prop.table(table(model3$result$fitted.values>.5, model3$result$y))#
+model3correct<-(model3classif[1,1] + model3classif[2,2])#
+#
+### Model4, considering neoliberalism + trade change ####
+#
+model4vars<-subset(modelvars, select=c("fp", "interp", "lrgdpch", "lgrgdpch", "lopenk", "ldopenk", "lfdiinward", "lfpistock", "leconglob", "ldeconglob", "lpolity2", "ldpolity2", "spline"))#
+model4vars<-model4vars[complete.cases(model4vars),]#
+model4<-zelig(fp ~ lpolity2 + ldpolity2 + lrgdpch + lgrgdpch + interp + spline + lopenk + ldopenk + leconglob + ldeconglob,#
+              model="logit",#
+              robust=TRUE,#
+              data=model4vars,#
+              cite=F)#
+#
+model4classif<-prop.table(table(model4$result$fitted.values>.5, model4$result$y))#
+model4correct<-(model4classif[1,1] + model4classif[2,2])#
+#
+### Model5, considering neoliberalism + fdi change ####
+#
+model5vars<-subset(modelvars, select=c("fp", "interp", "lrgdpch", "lgrgdpch", "lopenk", "lfdiinflow", "lfdiinward", "lfpistock", "leconglob", "ldeconglob", "lpolity2", "ldpolity2", "spline"))#
+model5vars<-model5vars[complete.cases(model5vars),]#
+model5<-zelig(fp ~ lpolity2 + ldpolity2 + lrgdpch + lgrgdpch + interp + spline + lfdiinward + lfdiinflow + leconglob + ldeconglob,#
+              model="logit",#
+              robust=TRUE,#
+              data=model5vars,#
+              cite=F)#
+#
+model5classif<-prop.table(table(model5$result$fitted.values>.5, model5$result$y))#
+model5correct<-(model5classif[1,1] + model5classif[2,2])#
+#
+### Model6, considering neoliberalism + fpi change ####
+#
+model6vars<-subset(modelvars, select=c("fp", "interp", "lrgdpch", "lgrgdpch", "lopenk", "lfpi", "lfdiinward", "lfpistock", "leconglob", "ldeconglob", "lpolity2", "ldpolity2", "spline"))#
+model6vars<-model6vars[complete.cases(model6vars),]#
+model6<-zelig(fp ~ lpolity2 + ldpolity2 + lrgdpch + lgrgdpch + interp + spline + lfpistock + lfpi + leconglob + ldeconglob,#
+              model="logit",#
+              robust=TRUE,#
+              data=model6vars,#
+              cite=F)#
+#
+model6classif<-prop.table(table(model6$result$fitted.values>.5, model6$result$y))#
+model6correct<-(model6classif[1,1] + model6classif[2,2])
+source("/Users/justin/Dropbox/side_projects/misarchism/explore.R")
+source("/Users/justin/Dropbox/side_projects/misarchism/explore.R")
+df$aidblack_self[df$aidblack_self<1]<-NA
