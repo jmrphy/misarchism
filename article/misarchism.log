@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.15)  21 JUL 2015 20:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.15)  21 JUL 2015 21:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -720,13 +720,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip47
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 54.
+Package hyperref Info: Option `breaklinks' set `true' on input line 53.
 
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 54.
+(hyperref)                setting the option has no effect on input line 53.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 54.
+Package hyperref Info: Option `colorlinks' set `true' on input line 53.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip48
@@ -736,36 +736,44 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 (/usr/local/texlive/2013/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(./misarchism.aux)
+(./misarchism.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+)
 \openout1 = `misarchism.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 78.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 77.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 78.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmr.fd
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 77.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 78.
+LaTeX Info: Redefining \microtypecontext on input line 77.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -852,7 +860,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 78.
+Package hyperref Info: Link coloring ON on input line 77.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -862,43 +870,43 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count121
 )
-LaTeX Info: Redefining \ref on input line 78.
-LaTeX Info: Redefining \pageref on input line 78.
-LaTeX Info: Redefining \nameref on input line 78.
+LaTeX Info: Redefining \ref on input line 77.
+LaTeX Info: Redefining \pageref on input line 77.
+LaTeX Info: Redefining \nameref on input line 77.
 
 (./misarchism.out) (./misarchism.out)
 \@outlinefile=\write3
 \openout3 = `misarchism.out'.
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 83.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 82.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 83.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 82.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 83.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 82.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 83.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 82.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 83.
+(Font)              <10.95> on input line 82.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 83.
+(Font)              <8> on input line 82.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 83.
-LaTeX Font Info:    Try loading font information for U+msa on input line 83.
+(Font)              <6> on input line 82.
+LaTeX Font Info:    Try loading font information for U+msa on input line 82.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -906,7 +914,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2013/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 83.
+LaTeX Font Info:    Try loading font information for U+msb on input line 82.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -915,106 +923,106 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 83.
+(Font)              <10> on input line 82.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 83.
+(Font)              <7> on input line 82.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 83.
+(Font)              <5> on input line 82.
  [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
  [4]
 [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
-<figures/factorplot-1.pdf, id=185, 361.35pt x 289.08pt>
+<figures/factorplot-1.pdf, id=221, 361.35pt x 289.08pt>
 File: figures/factorplot-1.pdf Graphic file (type pdf)
 
 <use figures/factorplot-1.pdf>
-Package pdftex.def Info: figures/factorplot-1.pdf used on input line 643.
+Package pdftex.def Info: figures/factorplot-1.pdf used on input line 642.
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
  [16] [17 <./figures/factorplot-1.pdf>] [18]
-[19] [20] [21] <figures/effect-plot1-1.pdf, id=228, 433.62pt x 433.62pt>
+[19] [20] [21] <figures/effect-plot1-1.pdf, id=264, 433.62pt x 433.62pt>
 File: figures/effect-plot1-1.pdf Graphic file (type pdf)
 
 <use figures/effect-plot1-1.pdf>
-Package pdftex.def Info: figures/effect-plot1-1.pdf used on input line 828.
+Package pdftex.def Info: figures/effect-plot1-1.pdf used on input line 827.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
  [22 <./figures/effect-plot1-1.pdf>] [23]
 [24] [25]
-Overfull \hbox (0.66199pt too wide) in paragraph at lines 998--1013
+Overfull \hbox (0.66199pt too wide) in paragraph at lines 997--1012
 \T1/lmr/m/n/10.95 (-20) as ``misarchism''---a combination of anti-government, p
 ro-state, and moralistic attitudes---
  []
 
-[26] [27] [28] <figures/scree-1.pdf, id=285, 433.62pt x 361.35pt>
+[26] [27] [28] <figures/scree-1.pdf, id=317, 433.62pt x 361.35pt>
 File: figures/scree-1.pdf Graphic file (type pdf)
 
 <use figures/scree-1.pdf>
-Package pdftex.def Info: figures/scree-1.pdf used on input line 1069.
+Package pdftex.def Info: figures/scree-1.pdf used on input line 1068.
 (pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
  [29 <./figures/scree-1.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 1077.
+(Font)              <12> on input line 1076.
  [30
 
 ] [31
 
 ] [32]
-<figures/bma2-1.pdf, id=325, 433.62pt x 361.35pt>
+<figures/bma2-1.pdf, id=356, 433.62pt x 361.35pt>
 File: figures/bma2-1.pdf Graphic file (type pdf)
  <use figures/bma2-1.pdf>
-Package pdftex.def Info: figures/bma2-1.pdf used on input line 1210.
+Package pdftex.def Info: figures/bma2-1.pdf used on input line 1209.
 (pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
 
 [33
 
- <./figures/bma2-1.pdf>] <figures/bma3-1.pdf, id=336, 433.62pt x 361.35pt>
+ <./figures/bma2-1.pdf>] <figures/bma3-1.pdf, id=367, 433.62pt x 361.35pt>
 File: figures/bma3-1.pdf Graphic file (type pdf)
 
 <use figures/bma3-1.pdf>
-Package pdftex.def Info: figures/bma3-1.pdf used on input line 1218.
+Package pdftex.def Info: figures/bma3-1.pdf used on input line 1217.
 (pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
  [34
 
  <./figures/bma3-1.pdf>] [35
 
 ]
-<figures/missing2-1.pdf, id=352, 433.62pt x 361.35pt>
+<figures/missing2-1.pdf, id=383, 433.62pt x 361.35pt>
 File: figures/missing2-1.pdf Graphic file (type pdf)
 
 <use figures/missing2-1.pdf>
-Package pdftex.def Info: figures/missing2-1.pdf used on input line 1254.
+Package pdftex.def Info: figures/missing2-1.pdf used on input line 1253.
 (pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
 
-<figures/missing3-1.pdf, id=353, 433.62pt x 361.35pt>
+<figures/missing3-1.pdf, id=384, 433.62pt x 361.35pt>
 File: figures/missing3-1.pdf Graphic file (type pdf)
 
 <use figures/missing3-1.pdf>
-Package pdftex.def Info: figures/missing3-1.pdf used on input line 1260.
+Package pdftex.def Info: figures/missing3-1.pdf used on input line 1259.
 (pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
  [36
 
  <./figures/missing2-1.pdf>] [37 <./figures/missing3-1.pdf>] <figures/missing4-
-1.pdf, id=377, 433.62pt x 361.35pt>
+1.pdf, id=408, 433.62pt x 361.35pt>
 File: figures/missing4-1.pdf Graphic file (type pdf)
 
 <use figures/missing4-1.pdf>
-Package pdftex.def Info: figures/missing4-1.pdf used on input line 1268.
+Package pdftex.def Info: figures/missing4-1.pdf used on input line 1267.
 (pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
 
-<figures/missing5-1.pdf, id=378, 433.62pt x 361.35pt>
+<figures/missing5-1.pdf, id=409, 433.62pt x 361.35pt>
 File: figures/missing5-1.pdf Graphic file (type pdf)
 
 <use figures/missing5-1.pdf>
-Package pdftex.def Info: figures/missing5-1.pdf used on input line 1274.
+Package pdftex.def Info: figures/missing5-1.pdf used on input line 1273.
 (pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
  [38
 
  <./figures/missing4-1.pdf>] [39 <./figures/missing5-1.pdf>] <figures/missing6-
-1.pdf, id=409, 433.62pt x 361.35pt>
+1.pdf, id=440, 433.62pt x 361.35pt>
 File: figures/missing6-1.pdf Graphic file (type pdf)
 
 <use figures/missing6-1.pdf>
-Package pdftex.def Info: figures/missing6-1.pdf used on input line 1282.
+Package pdftex.def Info: figures/missing6-1.pdf used on input line 1281.
 (pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
  [40
 
@@ -1022,35 +1030,29 @@ Package pdftex.def Info: figures/missing6-1.pdf used on input line 1282.
 
 ] [42] [43]
 [44] [45]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1516.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1515.
  [46]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1516.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1515.
  (./misarchism.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1516.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1516.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1515.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1515.
+
+Package rerunfilecheck Info: File `misarchism.out' has not changed.
+(rerunfilecheck)             Checksum: 7E10A4894B4B7029A5F7777056FE1C11;1847.
 
 
+LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Warning: File `misarchism.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `misarchism.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  7E10A4894B4B7029A5F7777056FE1C11;1847.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1516.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1515.
  ) 
 Here is how much of TeX's memory you used:
- 12562 strings out of 493315
- 181534 string characters out of 6137903
- 285125 words of memory out of 5000000
- 15478 multiletter control sequences out of 15000+600000
+ 12573 strings out of 493315
+ 181657 string characters out of 6137903
+ 284892 words of memory out of 5000000
+ 15489 multiletter control sequences out of 15000+600000
  85983 words of font info for 169 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 32i,10n,35p,1722b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,10n,35p,1723b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.61} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -1247,10 +1249,10 @@ ist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/public/lm/lmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/l
 m/lmri10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy10.p
 fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on misarchism.pdf (46 pages, 939881 bytes).
+Output written on misarchism.pdf (46 pages, 940251 bytes).
 PDF statistics:
- 547 PDF objects out of 1000 (max. 8388607)
- 463 compressed objects within 5 object streams
+ 578 PDF objects out of 1000 (max. 8388607)
+ 494 compressed objects within 5 object streams
  142 named destinations out of 1000 (max. 500000)
- 20531 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 20611 words of extra memory for PDF output out of 20736 (max. 10000000)
 
