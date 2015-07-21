@@ -40,6 +40,7 @@ fit <- fa(factor.vars[14:length(factor.vars)], nfactors=2,
           missing=FALSE)
 # summary(fit)
 # print(fit, sort=TRUE)
+# fit
 
 #fit <- factanal(factor.vars[7:length(factor.vars)], 3, rotation="varimax", scores="regression")
 # print(fit, digits=2, cutoff=.3, sort=TRUE)
