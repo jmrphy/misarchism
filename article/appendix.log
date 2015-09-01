@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.15)  1 SEP 2015 17:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.15)  1 SEP 2015 16:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**misarchism.tex
-(./misarchism.tex
+**appendix.tex
+(./appendix.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
@@ -736,8 +736,12 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 (/usr/local/texlive/2013/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(./misarchism.aux)
-\openout1 = `misarchism.aux'.
+(./appendix.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+)
+\openout1 = `appendix.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
 LaTeX Font Info:    ... okay on input line 74.
@@ -762,7 +766,8 @@ LaTeX Font Info:    ... okay on input line 74.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 74.
 LaTeX Font Info:    ... okay on input line 74.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 74.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmr.fd
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Info: Redefining \microtypecontext on input line 74.
@@ -866,45 +871,52 @@ LaTeX Info: Redefining \ref on input line 74.
 LaTeX Info: Redefining \pageref on input line 74.
 LaTeX Info: Redefining \nameref on input line 74.
 
-(./misarchism.out) (./misarchism.out)
+(./appendix.out) (./appendix.out)
 \@outlinefile=\write3
-\openout3 = `misarchism.out'.
+\openout3 = `appendix.out'.
 
- [1
 
-{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
- [4] [5]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 261.
+<figures/scree-1.pdf, id=4, 433.62pt x 361.35pt>
+File: figures/scree-1.pdf Graphic file (type pdf)
+ <use figures/scree-1.pdf>
+Package pdftex.def Info: figures/scree-1.pdf used on input line 103.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+
+[1
+
+{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2 <./figures/scree-1.pdf>]
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 111.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 261.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 111.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 261
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 111
 .
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 261
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 111
 .
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 261.
+(Font)              <12> on input line 111.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 261.
+(Font)              <8> on input line 111.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 261.
-LaTeX Font Info:    Try loading font information for U+msa on input line 261.
+(Font)              <6> on input line 111.
+LaTeX Font Info:    Try loading font information for U+msa on input line 111.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -912,127 +924,123 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2013/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 261.
+LaTeX Font Info:    Try loading font information for U+msb on input line 111.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
+) [3
+
+]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 265.
+(Font)              <10> on input line 137.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 265.
+(Font)              <7> on input line 137.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 265.
- [6]
-[7] [8] [9] [10] [11] [12] [13] [14] [15]
-<figures/factorplot-1.pdf, id=131, 361.35pt x 289.08pt>
-File: figures/factorplot-1.pdf Graphic file (type pdf)
+(Font)              <5> on input line 137.
 
-<use figures/factorplot-1.pdf>
-Package pdftex.def Info: figures/factorplot-1.pdf used on input line 630.
-(pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
- [16 <./figures/factorplot-1.pdf>] [17] [18]
-[19] [20] <figures/effect-plot1-1.pdf, id=170, 433.62pt x 433.62pt>
-File: figures/effect-plot1-1.pdf Graphic file (type pdf)
+[4
 
-<use figures/effect-plot1-1.pdf>
-Package pdftex.def Info: figures/effect-plot1-1.pdf used on input line 815.
-(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
- [21 <./figures/effect-plot1-1.pdf>] [22]
-[23] [24]
-Overfull \hbox (0.66199pt too wide) in paragraph at lines 985--1000
-\T1/lmr/m/n/10.95 (-20) as ``misarchism''---a combination of anti-government, p
-ro-state, and moralistic attitudes---
- []
+] [5] <figures/bma2-1.pdf, id=54, 433.62pt x 361.35pt>
+File: figures/bma2-1.pdf Graphic file (type pdf)
 
-[25] [26] [27] [28] [29] [30] [31] [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1250.
- [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1250.
- (./misarchism.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1250.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1250.
+<use figures/bma2-1.pdf>
+Package pdftex.def Info: figures/bma2-1.pdf used on input line 244.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+ [6
 
-Package rerunfilecheck Info: File `misarchism.out' has not changed.
-(rerunfilecheck)             Checksum: 5F70C0FE024FFEFC69B8977427CBD8CA;1673.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1250.
+ <./figures/bma2-1.pdf>]
+<figures/bma3-1.pdf, id=65, 433.62pt x 361.35pt>
+File: figures/bma3-1.pdf Graphic file (type pdf)
+ <use figures/bma3-1.pdf>
+Package pdftex.def Info: figures/bma3-1.pdf used on input line 252.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+
+[7
+
+ <./figures/bma3-1.pdf>] [8
+
+]
+<figures/missing2-1.pdf, id=82, 433.62pt x 361.35pt>
+File: figures/missing2-1.pdf Graphic file (type pdf)
+
+<use figures/missing2-1.pdf>
+Package pdftex.def Info: figures/missing2-1.pdf used on input line 288.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+
+<figures/missing3-1.pdf, id=83, 433.62pt x 361.35pt>
+File: figures/missing3-1.pdf Graphic file (type pdf)
+
+<use figures/missing3-1.pdf>
+Package pdftex.def Info: figures/missing3-1.pdf used on input line 294.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+ [9
+
+ <./figures/missing2-1.pdf>] [10 <./figures/missing3-1.pdf>] <figures/missing4-
+1.pdf, id=106, 433.62pt x 361.35pt>
+File: figures/missing4-1.pdf Graphic file (type pdf)
+
+<use figures/missing4-1.pdf>
+Package pdftex.def Info: figures/missing4-1.pdf used on input line 302.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+
+<figures/missing5-1.pdf, id=107, 433.62pt x 361.35pt>
+File: figures/missing5-1.pdf Graphic file (type pdf)
+
+<use figures/missing5-1.pdf>
+Package pdftex.def Info: figures/missing5-1.pdf used on input line 308.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+ [11
+
+ <./figures/missing4-1.pdf>] [12 <./figures/missing5-1.pdf>] <figures/missing6-
+1.pdf, id=138, 433.62pt x 361.35pt>
+File: figures/missing6-1.pdf Graphic file (type pdf)
+
+<use figures/missing6-1.pdf>
+Package pdftex.def Info: figures/missing6-1.pdf used on input line 316.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 320.
+ [13
+
+ <./figures/missing6-1.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 320.
+ (./appendix.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 320.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 320.
+Package rerunfilecheck Info: File `appendix.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 320.
  ) 
 Here is how much of TeX's memory you used:
- 12420 strings out of 493315
- 179461 string characters out of 6137903
- 280450 words of memory out of 5000000
- 15439 multiletter control sequences out of 15000+600000
- 77106 words of font info for 157 fonts, out of 8000000 for 9000
+ 12215 strings out of 493315
+ 177225 string characters out of 6137903
+ 283166 words of memory out of 5000000
+ 15432 multiletter control sequences out of 15000+600000
+ 46206 words of font info for 62 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 32i,10n,35p,1076b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
-, replaced by a fixed one
-
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/loca
-l/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/
-2013/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/lm/lmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
-/lm/lmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr10.
-pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/lm/lmri10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
-ic/lm/lmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy
-7.pfb>
-Output written on misarchism.pdf (33 pages, 322947 bytes).
+ 31i,10n,35p,233b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
+cal/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
+13/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2013/texmf-d
+ist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/lm/lmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/l
+m/lmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr10.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/lm/lmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
+ic/lm/lmsy7.pfb>
+Output written on appendix.pdf (13 pages, 757361 bytes).
 PDF statistics:
- 321 PDF objects out of 1000 (max. 8388607)
- 268 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 16467 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 194 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 10281 words of extra memory for PDF output out of 12000 (max. 10000000)
 

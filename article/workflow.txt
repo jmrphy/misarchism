@@ -1,0 +1,3 @@
+Workflow for submission 2
+
+References and appendix separated from .tex file, which was kept from last Rmarkdown processing. Thus work from main .tex and appendix.tex.
