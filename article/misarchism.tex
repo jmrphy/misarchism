@@ -14,7 +14,7 @@
     \usepackage{fontspec}
   \fi
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \newcommand{\euro}{â‚¬}
+  \newcommand{\euro}{¤}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -76,7 +76,7 @@
 \maketitle
 
 
-\abstract{Research on the Tea Party finds that both libertarian and authoritarian attitudes drive support for this movement, but political scientists lack a satisfactory explanation of this contradiction. To help resolve this puzzle, we argue a key factor driving support for the Tea Party is what Nietzsche called ``misarchism:'' an ideology which is anti-government but statist and moralistic. Factor analysis of nine attitudes from the 2012 American National Election Study reveals that statism and moral traditionalism are intercorrelated on a dimension distinct from attitudes toward government. Regression analysis shows that the interaction of anti-government and morally statist ideological factors is one of the strongest and most robust predictors of Tea Party support. Bayesian Model Averaging, multiple imputation, and genetic matching suggest that the correlation between misarchism and support for the Tea Party is not an artifact of model selection, missing values, or bias due to covariate imbalance.}
+\abstract{Research on the Tea Party finds that both libertarian and authoritarian attitudes drive support for this movement, but political scientists lack a satisfactory explanation of this contradiction. To help resolve this puzzle, we argue a key factor driving support for the Tea Party is what Nietzsche called ``misarchism:'' an ideology which is anti-government but statist and moralistic. Factor analysis of nine attitudes from the 2012 American National Election Study reveals that statism and moral traditionalism are intercorrelated on a dimension distinct from attitudes toward government. Regression analysis shows that the interaction of anti-government and morally statist ideological factors is one of the strongest and most robust predictors of Tea Party support. Bayesian Model Averaging, multiple imputation, and genetic matching suggest that the correlation between misarchism and support for the Tea Party is not an artifact of model selection, missing values, or parametric model dependence.}
 
 \newpage
 
@@ -146,8 +146,7 @@ would be included in 100\% of the most likely models of Tea Party
 support. Finally, after genetic matching we find an average treatment
 effect for the treated consistent with our main regression result,
 suggesting that the relationship we estimate between misarchism and
-support for the Tea Party is not an artifact of covariate imbalance or
-parametric modeling assumptions. Our findings have important
+support for the Tea Party is not an artifact of parametric modeling assumptions. Our findings have important
 implications for our understanding of right-wing ideology in the United
 States and they help to resolve the puzzle of the Tea Party's still
 poorly understood and contradictory ideological components.
@@ -826,7 +825,7 @@ variables are included. Finally, an \emph{ad hoc} approach leads to
 incomplete representations of model uncertainty (Montgomery and
 Nyhan 2010, 4). An increasingly widespread solution in political science
 is Bayesian Model Averaging (BMA), which estimates all possible models
-from a set of variables provides posterior probabilities for all
+from a set of variables and provides posterior probabilities for all
 possible coefficients and models.
 
 In particular, a version of the R package \emph{BMA} modified by
@@ -912,8 +911,7 @@ table and further diagnostic information in Supplementary Information.
 
 \subsubsection{Matching and Sensitivity}\label{matching-and-sensitivity}
 
-To mitigate the risk of bias from non-random assignment into misarchism
-and guard against parametric model dependence, we employ matching to
+To guard against parametric model dependence, we employ matching to
 estimate the effect of misarchism from a subset of highly similar
 individuals. We use a genetic matching algorithm to identify that subset
 of the original dataset for which the distribution of each covariate is
@@ -927,8 +925,7 @@ from a randomized experiment, unless some unobserved factor shapes the
 propensity to be treated. Although the possibility of omitted variables
 can never be ruled out, we can quantify the sensitivity of these
 matching estimates to some potential unobserved source of bias. Thus, we
-also report sensitivity bounds as developed by Rosenbaum (Rosenbaum
-1988).
+also report sensitivity bounds as developed by Rosenbaum (1988).
 
 We generate matching estimates for each of our three independent
 variables of interest, one at a time, using one-to-one genetic matching
@@ -953,7 +950,7 @@ factor would have to be about 2.03.\footnote{Rosenbaum bounds for a
   \emph{rbounds}. See Keele (2014).} Thus, the partial correlation
 between moral statism and Tea Party support when \emph{Governmentalism}
 is set at its mean, as obtained in Model 2, does not appear to be an
-artifact of covariate imbalance or parametric modeling assumptions, and
+artifact of parametric model dependence and
 would require a fairly large unobserved source of bias to become
 insignificant.
 
@@ -972,8 +969,7 @@ suggest that for it to become statistically insignificant at the 95\%
 confidence level, the odds of differential assignment to treatment due
 to an unobserved factor would have to be about 1.43. Our key
 relationship of interest estimated in Model 2 therefore does not appear
-generated by systematic assignment into treatment due to any of the
-observed covariates and, as with the estimated effect of moral statism,
+to be model dependent and, as with the estimated effect of moral statism,
 would require a fairly large unobserved source of bias to become
 insignificant.
 
