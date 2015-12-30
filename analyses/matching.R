@@ -18,7 +18,7 @@ matdf<- as.data.frame(cbind(tea_supp, gender_respondent_x, inc_incgroup_pre, dem
                                Auth, bornagain, church, republican, fox, MS, G, MSG))
 detach(factor.vars)
 
-ps  <- glm(MS ~ gender_respondent_x + inc_incgroup_pre + inc_incgroup_pre + dem_age_r_x +
+ps  <- glm(MS ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
              white + dem_edu + Obama + Auth + bornagain + church + republican + fox,
            family = binomial, data = matdf)
 

@@ -1,6 +1,7 @@
 setwd("~/Dropbox/gh_projects/misarchism")
 require(arm)
 require(ggplot2)
+require(GPArotation)
 
 df<-read.csv("data/misarchism_data.csv")
 
@@ -17,13 +18,17 @@ factor.vars<-factor.vars[c("caseid", "tea_supp", "gender_respondent_x", "fox", "
                            "defsppr_self", "spsrvpr_ssself",
                            "immig_checks", "guarpr_self")]
 
-# Rescale variables for FA
+# Rescale numeric variables (First 7 columns are categorical variables)
 factor.vars[8:length(factor.vars)]<-as.data.frame(sapply(factor.vars[8:length(factor.vars)], function(x) rescale(x)))
 
 
 detach("package:arm", unload=TRUE)
 require(psych)
 set.seed(666)
+
+#######################################
+## Scree plot for early exploration ###
+#######################################
 
 # fad<-factor.vars[10:length(factor.vars)]
 # 
@@ -33,11 +38,16 @@ set.seed(666)
 # nS <- nScree(x=ev$values, aparallel=ap$eigen$qevpea)
 # scree.plot<-plotnScree(nS)
 
+########################################
+### Factor analysis in paper ###########
+########################################
 
-# Factor analysis on same variables as PCA, minus pcomp1
-fit <- fa(factor.vars[14:length(factor.vars)], nfactors=2,
+# "15:length" excludes party id, "14:length" includes it
+
+fit <- fa(factor.vars[15:length(factor.vars)], nfactors=2,
           rotate = "oblimin", fm = "ml", warnings=FALSE,
           missing=FALSE)
+fad<-factor.vars[15:length(factor.vars)] # "factor analysis data" for later checks
 # summary(fit)
 # print(fit, sort=TRUE)
 # fit
@@ -48,23 +58,39 @@ fit <- fa(factor.vars[14:length(factor.vars)], nfactors=2,
 
 load <- as.data.frame(fit$loadings[,1:2])
 set.seed(123)
-rownames(load)<-c("Conservatism", "Family", "Guns", "Intolerant", "Morals", "Wiretapping", "Defense",
+rownames(load)<-c("Family", "Guns", "Intolerant", "Morals", "Wiretapping", "Defense",
                   "Services", "Immigration", "Jobs")
 factor.plot<-ggplot(load, aes(x=ML2, y=ML1, label=rownames(load))) +
   geom_text(size=4, position = position_jitter(w = 0.03, h = 0.03)) +
   theme_bw() +
-  labs(x="Factor 1 (Moral Statism)", y="Factor 2 (Government)")
+  labs(x="Factor 2 (Moral Statism)", y="Factor 1 (Governmentalism)")
 
 # plot factor 1 by factor 2 
 detach("package:psych", unload=TRUE)
 require(arm)
-# factor.vars$factor1 <- rescale(max(fit$scores[,1])-fit$scores[,1]) # reverse to make it "conservatism"
-factor.vars$MoralStatism <- rescale(fit$scores[,1])
-factor.vars$Government <- rescale(fit$scores[,2])
+
+factor.vars$Government <- rescale(fit$scores[,1])
+factor.vars$MoralStatism <- rescale(fit$scores[,2])
+
+factor.vars$Antigov<-max(factor.vars$Government, na.rm=T)-factor.vars$Government
+factor.vars$Mis<-factor.vars$MoralStatism*factor.vars$Antigov
+
+factor.vars$republican.cat<-ordered(as.factor(df$republican))
+factor.vars$ideology.cat<-ordered(as.factor(df$libcpre_self))
+factor.vars$Mis.cat<-ordered(cut(factor.vars$Mis, breaks=3))
+factor.vars$Antigov.cat<-ordered(cut(factor.vars$Antigov, breaks=3))
+factor.vars$MoralStatism.cat<-ordered(cut(factor.vars$MoralStatism, breaks=3))
+
 detach("package:arm", unload=TRUE)
 
 # Keep version with missing for imputation in 'missing.R'
 factor.vars.miss<-factor.vars
+
+# Keep version for comparisons to conservatism and republicanism
+explore.subset<-subset(factor.vars, select=c("libcpre_self", "ideology.cat", "republican",
+                                               "republican.cat", "tea_supp", "Antigov", "Antigov.cat",
+                                               "Mis", "Mis.cat", "MoralStatism", "MoralStatism.cat"))
+explore.subset<-explore.subset[complete.cases(explore.subset),]
 
 # Remove missing for main regression models
 factor.vars<-factor.vars[complete.cases(factor.vars),]

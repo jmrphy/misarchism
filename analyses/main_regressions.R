@@ -1,14 +1,16 @@
-require(Zelig)
 
-# source("analyses/princ_comp.R")
+
+require(Zelig)
+require(car)
 
 factor.vars$bornagain<-relevel(factor.vars$bornagain, ref="2. no")
 factor.vars$church<-relevel(factor.vars$church, ref="2. no")
 factor.vars$gender_respondent_x<-relevel(factor.vars$gender_respondent_x, ref="2. female")
+factor.vars$Support<-factor.vars$tea_supp
 
-model1<-glm(tea_supp ~ gender_respondent_x + inc_incgroup_pre + libcpre_self +
+model1<-glm(Support ~ gender_respondent_x + inc_incgroup_pre +
               dem_age_r_x + white + dem_edu + Obama + Auth + bornagain +
-              church + republican + fox,
+              church + republican + fox + libcpre_self,
               family=binomial,
               data=factor.vars)
 
@@ -25,12 +27,17 @@ model1<-glm(tea_supp ~ gender_respondent_x + inc_incgroup_pre + libcpre_self +
 # misarchism.vars<-misarchism.vars[complete.cases(misarchism.vars),]
 
 factor.vars$Gov<-factor.vars$Government
-factor.vars$Support<-factor.vars$tea_supp
 model2<-glm(Support ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
               white + dem_edu + Obama + Auth + bornagain +
-              church + republican + fox + MoralStatism + Gov + MoralStatism:Gov,
+              church + republican + fox + libcpre_self + MoralStatism + Gov + MoralStatism:Gov,
               family=binomial,
               data=factor.vars)
+
+model2.cons<-glm(Support ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
+              white + dem_edu + Obama + Auth + bornagain +
+              church + republican + fox + libcpre_self + MoralStatism + Gov + MoralStatism:Gov,
+            family=binomial,
+            data=subset(factor.vars, libcpre_self>mean(libcpre_self)))
 
 # summary(model2)
 # require(car)
@@ -41,24 +48,14 @@ model2<-glm(Support ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
 #  (model2correct/nrow(factor.vars))*100
 
 
-model2.z<-zelig(tea_supp ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
+model2.z<-zelig(Support ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
                   white + dem_edu + Obama + Auth + bornagain + 
-                  church + republican + fox + MoralStatism + Government + MoralStatism:Government,
+                  church + republican + fox + libcpre_self + MoralStatism + Government + MoralStatism:Government,
                      model="logit",
-                     robust=FALSE,
                      data=factor.vars,
                      cite=F)
 # 
 # summary(model2.z)
-
-model2.pid<-glm(tea_supp ~ gender_respondent_x + inc_incgroup_pre + libcpre_self + dem_age_r_x +
-                            white + dem_edu + Obama + Auth + bornagain +
-                            church + republican + fox + MoralStatism + Government + MoralStatism:Government,
-                          family=binomial,
-                          data=factor.vars)
-# summary(model2.pid)
-require(car)
-# vif(model2.pid)[13]
 
 set.seed(666)
 
@@ -105,10 +102,10 @@ msg.out <- sim(model2.z, x = msg.low, x1 = msg.hi)
 # # summary(msg.out)
 
 
-# Most likely model according to BMA
-model2.z.reduced<-zelig(tea_supp ~ Obama + fox + MoralStatism + Government + MoralStatism:Government,
+# Most likely model according to BMA?
+model2.z.reduced<-zelig(tea_supp ~ Obama + fox +inc_incgroup_pre + dem_age_r_x +
+                          white + libcpre_self + MoralStatism + Government + MoralStatism:Government,
                 model="logit",
-                robust=FALSE,
                 data=factor.vars,
                 cite=F)
 
@@ -124,9 +121,9 @@ msg.out.reduced <- sim(model2.z.reduced, x = msg.low, x1 = msg.hi)
 
 factor.vars$trad_avg<-(factor.vars$trad_famval+factor.vars$trad_adjust+factor.vars$trad_tolerant)/3
 
-model.allvars<-glm(tea_supp ~ gender_respondent_x + inc_incgroup_pre + libcpre_self +
+model.allvars<-glm(tea_supp ~ gender_respondent_x + inc_incgroup_pre +
                        dem_age_r_x + white + dem_edu + Obama + Auth + bornagain +
-                       church + republican + fox +
+                       church + republican + fox +libcpre_self +
                 trad_famval + trad_adjust + trad_tolerant + guarpr_self + defsppr_self + spsrvpr_ssself + gun_control +
                 immig_checks + wiretap,
               family="binomial",
@@ -138,7 +135,7 @@ model.allvars<-glm(tea_supp ~ gender_respondent_x + inc_incgroup_pre + libcpre_s
 
 model.republican<-lm(republican ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
               white + dem_edu + Obama + Auth + bornagain +
-              church + fox + MoralStatism + Government + MoralStatism:Government,
+              church + fox + libcpre_self + MoralStatism + Government + MoralStatism:Government,
             data=factor.vars)
 summary(model.republican)
 

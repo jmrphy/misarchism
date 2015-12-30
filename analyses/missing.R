@@ -1,10 +1,13 @@
 require(Amelia)
 require(Zelig)
 
-#factor.vars.miss$caseid<-NULL
-#factor.vars.miss$Obama<-NULL
-factor.vars.miss$libcpre_self<-NULL
-factor.vars.miss$wiretap<-NULL
+
+
+factor.vars.miss<-factor.vars.miss[c("white", "gender_respondent_x", "tea_supp", "bornagain", "church",
+                                     "republican", "fox", "dem_edu",
+                                     "libcpre_self", "inc_incgroup_pre", "dem_age_r_x", "Obama", "Auth",
+                                     "MoralStatism", "Government")]
+factor.vars.miss$caseid<-row.names(factor.vars.miss)
 amelia.out <- amelia(factor.vars.miss, m=10, idvars=c("caseid"),
                      noms=c("white", "gender_respondent_x", "tea_supp", "bornagain", "church", "fox"),
                      p2s=0)
@@ -17,7 +20,7 @@ amelia.out <- amelia(factor.vars.miss, m=10, idvars=c("caseid"),
 #disperse(amelia.out, dims = 1, m = 5)
 
 model2.z.miss<-zelig(tea_supp ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
-                  white + dem_edu + Obama + Auth + bornagain + church + republican + fox +
+                  white + dem_edu + Obama + Auth + bornagain + church + republican + fox + libcpre_self +
                     MoralStatism + Government + MoralStatism:Government,
                 model="logit",
                 robust=FALSE,

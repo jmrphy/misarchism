@@ -81,6 +81,8 @@
 \def\labelenumi{\arabic{enumi}.}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
+Additional information on Factor Analysis
+\item
   Scree plot for factor model
 \item
   Numerical factor loadings
@@ -89,19 +91,41 @@
 \item
   Estimated effects of misarchism on Party ID and Conservatism
 \item
-  Probabilities of covariate inclusion from Bayesian Model Averaging
+  Additional information on Bayesian Model Averaging
 \item
-  Expected value of coefficients from Bayesian Model Averaging
+  Inclusion probabilities and expected value of coefficients from Bayesian Model Averaging
 \item
-  Pooled regression results after multiple imputation
+  Additional information on Multiple Imputation
 \item
-  Multiple imputation diagnostics
+  Pooled regression results after Multiple Imputation
+\item
+  Multiple Imputation diagnostics
+\item
+Additional information on matching estimates and sensitivity bounds
+\item
+References
 \end{enumerate}
+
+Additional information on Factor Analysis
+
+We used an oblique rotation which allows for factors to be correlated. This is
+  appropriate here because, while we argue that moral statism and
+  anti-governmentalism are unique and distinct, they are likely to be
+  correlated. We use maximum likelihood as the factoring method because
+  it has a more formal statistical basis than other methods and is
+  widely seen as one of the optimal methods. See Fabrigar et al. (1999). We estimate two factors, which a scree plot (below) suggests to be the optimal number.
+  
+  For \emph{N} equal to 5914, a chi-square test of the hypothesis that two factors is
+  sufficient is equal to 900.727 with a p-value of 0, suggesting that
+  two factors are not sufficient, as we would expect. That said, the
+  root mean square of the residuals is 0.044 and the Tucker-Lewis Index
+  for factor reliability score is 0.869, both of which are near the
+  conventional cutoffs of .05 and .9, respectively.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{figures/scree-1.pdf}
-\caption{Biplot shows two main dimensions}
+\caption{Scree plot shows elbow at two factors}
 \end{figure}
 
 \clearpage
@@ -239,6 +263,18 @@ Akaike Inf. Crit. & 1,688.000 \\
 
 \clearpage
 
+Additional information on Bayesian Model Averaging
+
+A version of the R package \emph{BMA} modified by
+Mongtomery and Nyhan was used to search over the entire model space of
+Model 2. The analysis was conducted using the \emph{bic.glmMN()} function, which is a version of the
+\emph{bic.glm()} function in the R package \emph{BMA}. See Raftery et
+  al. (2015) and Montgomery and Nyhan (2010). The analysis uses
+uniform priors for all independent variables and the only restriction is
+that the interaction term and its two component variables are required
+to enter or not enter models together. Options were set to be least restrictive.
+No Occam's Window was used to narrow the models selected by the initial leap algorithm run over the entire model space and, following Montgomery and Nyhan (pp.~21), the number of best models of each size returned by the leaps algorithm was set to 100,000. In the end, 4,096 models were selected.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics{figures/bma2-1.pdf}
@@ -254,6 +290,19 @@ Akaike Inf. Crit. & 1,688.000 \\
 \end{figure}
 
 \clearpage
+
+Additional information on Multiple Imputation
+
+We use the R package \emph{Amelia} (Honaker, King, and Blackwell 2008) to generate 10
+versions of the ANES dataset with missing values imputed and
+\emph{Zelig} (Imai, King, and Lau 2009) to obtain pooled regression results via ``Rubin's rules.'' The multiple
+imputation algorithm only assumes that missing values are ``missing at
+random,'' not necessarily ``missing completely at random.'' In this
+context, ``missing at random'' only means that missingness is dependent
+on the observed variables. Full numerical results are provided below. Graphical diagnostics for overimputation,
+dispersion, and comparing pre- and post-imputation densities for our
+main variables suggest no problems or anomolies in the imputation
+procedures (see below the numerical results).
 
 \begin{table}[ht]
 \centering
@@ -316,5 +365,31 @@ Akaike Inf. Crit. & 1,688.000 \\
 \includegraphics{figures/missing6-1.pdf}
 \caption{Diagnostic Plot for Dispersion}
 \end{figure}
+
+Additional information on matching estimates and sensitivity bounds
+
+Rosenbaum bounds (1988) for a binary dependent variable are calculated using the \emph{binarysens()} function in the R package \emph{rbounds}. See Keele (2014). We generate matching estimates for each of our three independent
+variables of interest, one at a time, using one-to-one genetic matching
+with replacement. In each case, ``treatment'' is defined as having a
+value above the sample mean of the variable of interest. For each
+estimate, we balance on all covariates in Model 2 except the two
+components of the interaction term and including the treatment
+variable's propensity scores with respect to those covariates.
+
+\clearpage
+
+\subsection{References}
+
+Fabrigar, Leandre R, Duane T Wegener, Robert C MacCallum, and Erin J
+Strahan. 1999. ``Evaluating the use of exploratory factor analysis in
+psychological research.'' \emph{Psychological Methods} 4(3): 272--99.
+
+Keele, Luke J. 2014. ``rbounds: Perform Rosenbaum bounds sensitivity
+tests for matched and unmatched data.''
+\url{https://cran.r-project.org/web/packages/rbounds}.
+
+Raftery, Adrian E., Jennifer Hoeting, Chris Volinksy, Ian Painter, and Ka Yee Yeung. 2015. ``BMA: Bayesian Model Averaging.''
+\url{https://cran.r-project.org/web/packages/BMA/}.
+
 
 \end{document}
