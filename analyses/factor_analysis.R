@@ -52,9 +52,22 @@ fad<-factor.vars[15:length(factor.vars)] # "factor analysis data" for later chec
 # print(fit, sort=TRUE)
 # fit
 
-#fit <- factanal(factor.vars[7:length(factor.vars)], 3, rotation="varimax", scores="regression")
-# print(fit, digits=2, cutoff=.3, sort=TRUE)
-# summary(fit)
+
+############################################
+### Including ideological self-placement ###
+############################################
+
+fit2 <- fa(factor.vars[14:length(factor.vars)], nfactors=2,
+          rotate = "oblimin", fm = "ml", warnings=FALSE,
+          missing=FALSE)
+fad2<-factor.vars[14:length(factor.vars)] # "factor analysis data" for later checks
+
+detach("package:psych", unload=TRUE)
+require(arm)
+
+factor.vars$Government2 <- rescale(fit2$scores[,1])
+factor.vars$MoralStatism2 <- rescale(fit2$scores[,2])
+###############################################
 
 load <- as.data.frame(fit$loadings[,1:2])
 set.seed(123)
@@ -65,9 +78,6 @@ factor.plot<-ggplot(load, aes(x=ML2, y=ML1, label=rownames(load))) +
   theme_bw() +
   labs(x="Factor 2 (Moral Statism)", y="Factor 1 (Governmentalism)")
 
-# plot factor 1 by factor 2 
-detach("package:psych", unload=TRUE)
-require(arm)
 
 factor.vars$Government <- rescale(fit$scores[,1])
 factor.vars$MoralStatism <- rescale(fit$scores[,2])
@@ -88,7 +98,7 @@ factor.vars.miss<-factor.vars
 
 # Keep version for comparisons to conservatism and republicanism
 explore.subset<-subset(factor.vars, select=c("libcpre_self", "ideology.cat", "republican",
-                                               "republican.cat", "tea_supp", "Antigov", "Antigov.cat",
+                                               "republican.cat", "tea_supp", "Government", "Antigov", "Antigov.cat",
                                                "Mis", "Mis.cat", "MoralStatism", "MoralStatism.cat"))
 explore.subset<-explore.subset[complete.cases(explore.subset),]
 

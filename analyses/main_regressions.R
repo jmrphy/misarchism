@@ -50,7 +50,7 @@ model2.cons<-glm(Support ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x 
 
 model2.z<-zelig(Support ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
                   white + dem_edu + Obama + Auth + bornagain + 
-                  church + republican + fox + libcpre_self + MoralStatism + Government + MoralStatism:Government,
+                  church + republican + fox + libcpre_self + MoralStatism + Gov + MoralStatism:Gov,
                      model="logit",
                      data=factor.vars,
                      cite=F)
@@ -61,14 +61,21 @@ set.seed(666)
 
 # Moral Statism
 ms.low<-setx(model2.z, MoralStatism=quantile(factor.vars$MoralStatism, .1))
+ms.out.low <- sim(model2.z, x = ms.low)
+
 ms.hi<-setx(model2.z, MoralStatism=quantile(factor.vars$MoralStatism, .9))
+ms.out.hi <- sim(model2.z, x = ms.hi)
 # 
 ms.out <- sim(model2.z, x = ms.low, x1 = ms.hi)
 # summary(ms.out)
 
 # Governmentalism
-g.low<-setx(model2.z, Government=quantile(factor.vars$Government, .1))
-g.hi<-setx(model2.z, Government=quantile(factor.vars$Government, .9))
+g.low<-setx(model2.z, Gov=quantile(factor.vars$Gov, .1))
+g.out.low <- sim(model2.z, x = g.low)
+
+g.hi<-setx(model2.z, Gov=quantile(factor.vars$Gov, .9))
+g.out.hi <- sim(model2.z, x = g.hi)
+
 # 
 g.out <- sim(model2.z, x = g.hi, x1 = g.low)
 # summary(g.out)
@@ -76,7 +83,10 @@ g.out <- sim(model2.z, x = g.hi, x1 = g.low)
 
 # Obama
 o.low<-setx(model2.z, Obama=quantile(factor.vars$Obama, .1))
+o.out.low <- sim(model2.z, x = o.low)
+
 o.hi<-setx(model2.z, Obama=quantile(factor.vars$Obama, .9))
+o.out.hi <- sim(model2.z, x = o.hi)
 # 
 o.out <- sim(model2.z, x = o.hi, x1 = o.low)
 # summary(o.out)
@@ -90,16 +100,37 @@ a.out <- sim(model2.z, x = a.low, x1 = a.hi)
 # summary(a.out)
 
 
-# MS * G
+# MS * G Plot
 
 msg.low<-setx(model2.z, MoralStatism=seq(min(factor.vars$MoralStatism),max(factor.vars$MoralStatism), by=.075),
-              Government=quantile(factor.vars$Government, .9))
+              Gov=quantile(factor.vars$Gov, .9))
 msg.hi<-setx(model2.z, MoralStatism=seq(min(factor.vars$MoralStatism),max(factor.vars$MoralStatism), by=.075),
-             Government=quantile(factor.vars$Government, .1))
+             Gov=quantile(factor.vars$Gov, .1))
 # 
 msg.out <- sim(model2.z, x = msg.low, x1 = msg.hi)
 # # plot(msg.out)
 # # summary(msg.out)
+
+# MS*G Effect calculation
+
+# MS shift when people like government
+ms.low.g.hi<-setx(model2.z, Gov=quantile(factor.vars$Gov, .9), MoralStatism=quantile(factor.vars$MoralStatism, .1))
+ms.low.g.hi.out <- sim(model2.z, x = ms.low.g.hi)
+
+ms.hi.g.hi<-setx(model2.z, Gov=quantile(factor.vars$Gov, .9), MoralStatism=quantile(factor.vars$MoralStatism, .9))
+ms.hi.g.hi.out <- sim(model2.z, x = ms.hi.g.hi)
+
+msgout1 <- sim(model2.z, x = ms.low.g.hi, x1 = ms.hi.g.hi)
+
+# MS shift when people don't like government
+ms.low.g.low<-setx(model2.z, Gov=quantile(factor.vars$Gov, .1), MoralStatism=quantile(factor.vars$MoralStatism, .1))
+ms.low.g.low.out <- sim(model2.z, x = ms.low.g.low)
+
+ms.hi.g.low<-setx(model2.z, Gov=quantile(factor.vars$Gov, .1), MoralStatism=quantile(factor.vars$MoralStatism, .9))
+ms.hi.g.low.out <- sim(model2.z, x = ms.hi.g.low)
+
+msgout2 <- sim(model2.z, x = ms.low.g.low, x1 = ms.hi.g.low)
+
 
 
 # Most likely model according to BMA?
@@ -145,4 +176,14 @@ model.conservative<-lm(libcpre_self ~ gender_respondent_x + inc_incgroup_pre + d
                      data=factor.vars)
 summary(model.conservative)
 
+
+####################################
+## With ideology in factor model ###
+####################################
+
+model2.noideology<-glm(tea_supp ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
+              white + dem_edu + Obama + Auth + bornagain +
+              church + republican + fox  + MoralStatism2 + Government2 + MoralStatism2:Government,
+            family=binomial,
+            data=factor.vars)
 
