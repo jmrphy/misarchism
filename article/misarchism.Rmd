@@ -287,7 +287,6 @@ stargazer(model2.noideology,
 
 Individuals characterized by the highest observed levels of moral statism also in the 90th percentile of anti-governmentalism (below a value of -.7 on the governmentalism factor) have a probability of supporting the Tea Party around 40%. To be more precise, moving from minimum to maxium moral statism while in the 10th percentile of governmentalism increases the probability of supporting the Tea Party by .39 (sd=.07) more than it would in the 90th percentile of govermentalism, from .01 (sd=.00) to .42, (sd=.07) rather than .05 (sd=.02) to .03 (sd=.02).
 
-
 \clearpage
 
 ```{r bma2, cache=FALSE, echo=FALSE, fig.cap="Inclusion Probabilites from Bayesian Model Averaging", warning=FALSE, message=FALSE, error=FALSE, fig.height=5, fig.width=6,}
