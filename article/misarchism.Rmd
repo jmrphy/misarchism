@@ -70,6 +70,7 @@ In a second stage, we test whether the latent ideological dimensions identified 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, fig.path='figures/')
 options(digits=3)
+require(Zelig)
 ```
 
 ## Analysis
@@ -122,7 +123,7 @@ Does the misarchist interaction of moral statism and anti-governmentalism also d
 ```{r regression, results='asis', cache=FALSE, echo=FALSE, warning=FALSE, echo=FALSE, message=FALSE, error=FALSE}
 setwd("~/Dropbox/gh_projects/misarchism")
 require(stargazer)
-stargazer(model1, model2, header=FALSE, font.size="footnotesize", no.space=TRUE, title="Logistic Regressions, Tea Party Support",
+stargazer(model1, model2, model2.cons, header=FALSE, font.size="footnotesize", no.space=TRUE, title="Logistic Regressions, Tea Party Support",
           covariate.labels = c("Gender (Male)", "Income", "Age", "Race (White)",
                                "Education", "Obama", "Authoritarianism", "BornAgain", "Religion",
                                "PartyID (Republican)", "FoxNews","Conservatism", "MoralStatism", "Government",

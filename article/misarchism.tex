@@ -24,15 +24,6 @@
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
 \usepackage[margin=1in]{geometry}
-\usepackage{graphicx}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -50,9 +41,20 @@
             linkcolor=black,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
 
 %%% Use protect on footnotes to avoid problems with footnotes in titles
@@ -81,11 +83,18 @@
 
 \usepackage{setspace}
 
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
 
 \begin{document}
-
 \maketitle
-
 
 \doublespacing
 
@@ -596,30 +605,6 @@ series of Fox News programs listed by the ANES.\footnote{These include
 
 \subsection{Analysis}\label{analysis}
 
-\begin{verbatim}
-## ## 
-## ##  Zelig (Version 3.5.4, built: 2010-01-20)
-## ##  Please refer to http://gking.harvard.edu/zelig for full
-## ##  documentation or help.zelig() for help with commands and
-## ##  models supported by Zelig.
-## ##
-## 
-## ##  Zelig project citations:
-## ##    Kosuke Imai, Gary King, and Olivia Lau. (2009).
-## ##    ``Zelig: Everyone's Statistical Software,''
-## ##    http://gking.harvard.edu/zelig.
-## ##  and
-## ##    Kosuke Imai, Gary King, and Olivia Lau. (2008).
-## ##    ``Toward A Common Framework for Statistical Analysis
-## ##    and Development,'' Journal of Computational and
-## ##    Graphical Statistics, Vol. 17, No. 4 (December)
-## ##    pp. 892-913. 
-## 
-## ##  To cite individual Zelig models, please use the citation format printed with
-## ##  each model run and in the documentation.
-## ##
-\end{verbatim}
-
 First, we report results from a factor analysis using the extraction
 method of maximum likelihood and an oblique rotation.\footnote{An
   oblique rotation allows for factors to be correlated and is
@@ -841,50 +826,50 @@ conservatives or extreme Republicans.
   \caption{Logistic Regressions, Tea Party Support} 
   \label{} 
 \footnotesize 
-\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
-\\[-1.8ex] & (1) & (2)\\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
 \hline \\[-1.8ex] 
- Gender (Male) & 0.238$^{*}$ & 0.134 \\ 
-  & (0.124) & (0.128) \\ 
-  Income & $-$0.176 & $-$0.320$^{**}$ \\ 
-  & (0.142) & (0.147) \\ 
-  Age & $-$0.246$^{*}$ & $-$0.341$^{**}$ \\ 
-  & (0.138) & (0.144) \\ 
-  Race (White) & $-$0.338$^{**}$ & $-$0.410$^{**}$ \\ 
-  & (0.162) & (0.168) \\ 
-  Education & 0.114 & 0.058 \\ 
-  & (0.153) & (0.158) \\ 
-  Obama & $-$1.820$^{***}$ & $-$1.340$^{***}$ \\ 
-  & (0.200) & (0.223) \\ 
-  Authoritarianism & 0.028 & 0.054 \\ 
-  & (0.142) & (0.147) \\ 
-  BornAgain & 0.370$^{***}$ & 0.308$^{**}$ \\ 
-  & (0.131) & (0.134) \\ 
-  Religion & $-$0.040 & $-$0.024 \\ 
-  & (0.152) & (0.155) \\ 
-  PartyID (Republican) & 0.357$^{*}$ & 0.318 \\ 
-  & (0.194) & (0.201) \\ 
-  FoxNews & 0.776$^{***}$ & 0.700$^{***}$ \\ 
-  & (0.130) & (0.133) \\ 
-  Conservatism & 1.350$^{***}$ & 1.120$^{***}$ \\ 
-  & (0.192) & (0.202) \\ 
-  MoralStatism &  & $-$0.138 \\ 
-  &  & (0.261) \\ 
-  Government &  & $-$0.809$^{***}$ \\ 
-  &  & (0.253) \\ 
-  MoralStatism*Government &  & $-$1.080$^{***}$ \\ 
-  &  & (0.316) \\ 
-  Constant & $-$2.600$^{***}$ & $-$2.580$^{***}$ \\ 
-  & (0.202) & (0.208) \\ 
+ Gender (Male) & 0.238$^{*}$ & 0.134 & 0.255$^{*}$ \\ 
+  & (0.124) & (0.128) & (0.154) \\ 
+  Income & $-$0.176 & $-$0.320$^{**}$ & $-$0.386$^{**}$ \\ 
+  & (0.142) & (0.147) & (0.179) \\ 
+  Age & $-$0.246$^{*}$ & $-$0.341$^{**}$ & $-$0.212 \\ 
+  & (0.138) & (0.144) & (0.178) \\ 
+  Race (White) & $-$0.338$^{**}$ & $-$0.410$^{**}$ & $-$0.510$^{**}$ \\ 
+  & (0.162) & (0.168) & (0.213) \\ 
+  Education & 0.114 & 0.058 & 0.134 \\ 
+  & (0.153) & (0.158) & (0.195) \\ 
+  Obama & $-$1.820$^{***}$ & $-$1.340$^{***}$ & $-$1.270$^{***}$ \\ 
+  & (0.200) & (0.223) & (0.282) \\ 
+  Authoritarianism & 0.028 & 0.054 & $-$0.124 \\ 
+  & (0.142) & (0.147) & (0.174) \\ 
+  BornAgain & 0.370$^{***}$ & 0.308$^{**}$ & 0.320$^{**}$ \\ 
+  & (0.131) & (0.134) & (0.161) \\ 
+  Religion & $-$0.040 & $-$0.024 & $-$0.044 \\ 
+  & (0.152) & (0.155) & (0.190) \\ 
+  PartyID (Republican) & 0.357$^{*}$ & 0.318 & 0.176 \\ 
+  & (0.194) & (0.201) & (0.250) \\ 
+  FoxNews & 0.776$^{***}$ & 0.700$^{***}$ & 0.735$^{***}$ \\ 
+  & (0.130) & (0.133) & (0.158) \\ 
+  Conservatism & 1.350$^{***}$ & 1.120$^{***}$ & 2.000$^{***}$ \\ 
+  & (0.192) & (0.202) & (0.405) \\ 
+  MoralStatism &  & $-$0.138 & $-$0.513 \\ 
+  &  & (0.261) & (0.355) \\ 
+  Government &  & $-$0.809$^{***}$ & $-$1.030$^{***}$ \\ 
+  &  & (0.253) & (0.328) \\ 
+  MoralStatism*Government &  & $-$1.080$^{***}$ & $-$1.210$^{***}$ \\ 
+  &  & (0.316) & (0.451) \\ 
+  Constant & $-$2.600$^{***}$ & $-$2.580$^{***}$ & $-$2.890$^{***}$ \\ 
+  & (0.202) & (0.208) & (0.324) \\ 
  \hline \\[-1.8ex] 
-Observations & 2,406 & 2,406 \\ 
-Log Likelihood & $-$856.000 & $-$832.000 \\ 
-Akaike Inf. Crit. & 1,738.000 & 1,696.000 \\ 
+Observations & 2,406 & 2,406 & 1,079 \\ 
+Log Likelihood & $-$856.000 & $-$832.000 & $-$555.000 \\ 
+Akaike Inf. Crit. & 1,738.000 & 1,696.000 & 1,142.000 \\ 
 \hline 
 \hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \end{table}
 
@@ -892,171 +877,16 @@ Akaike Inf. Crit. & 1,738.000 & 1,696.000 \\
 
 \doublespacing
 
+
 \includegraphics{figures/effect-plot1-1.pdf}
+
+\bigskip{.5}
+
 \includegraphics{figures/effect-plot1-2.pdf}
 
-\subsubsection{Bayesian Model Averaging}\label{bayesian-model-averaging}
+\subsubsection{Robustness}\label{robustness}
 
-Regression results such as those presented above are sometimes sensitive
-to minor differences in model specification, such as including or
-excluding one variable. Because we do not know the true model, an
-idiosyncratic search for optimal model specifications can lead to bias.
-One risk is publication bias, if researchers prefer models that confirm
-their hypotheses. Another is loss of efficiency if too many unnecessary
-variables are included. Finally, an \emph{ad hoc} approach leads to
-incomplete representations of model uncertainty (J. M. Montgomery and
-Nyhan 2010, 4). An increasingly widespread solution in political science
-is Bayesian Model Averaging (BMA), which estimates all possible models
-from a set of variables provides posterior probabilities for all
-possible coefficients and models.
 
-In particular, a version of the R package \emph{BMA} modified by
-Mongtomery and Nyhan was used to search over the entire model space of
-Model 2.\footnote{The analysis was conducted using the
-  \emph{bic.glmMN()} function, which is a version of the
-  \emph{bic.glm()} function in the R package \emph{BMA}. See (Raftery et
-  al. 2015) and (J. M. Montgomery and Nyhan 2010)} The analysis uses
-uniform priors for all independent variables and the only restriction is
-that the interaction term and its two component variables are required
-to enter or not enter models together.\footnote{Options were set to be
-  least restrictive. No Occam's Window was used to narrow the models
-  selected by the initial leap algorithm run over the entire model space
-  and, following Montgomery and Nyhan (pp.~21), the number of best
-  models of each size returned by the leaps algorithm was set to 100,000}
-In the end, 4,096 models were selected.
-
-The results show that the misarchist terms are highly robust to model
-selection, with a posterior probability of inclusion equal to 100\% (one
-minus the cumulative posterior probability of all models excluding
-them). The expected value of the coefficient for \emph{MoralStatism} is
-.78 (sd=.29), for \emph{Government} it is -.71 (sd=.26), and for the
-interaction term it is -1.43 (sd=.31). \emph{Obama} and \emph{FoxNews}
-also had probabilities of inclusion equal to 100\% with expected values
-not dissimilar to those estimated in Model 2. \emph{Age} and \emph{Race}
-had probabilities of inclusion greater than 50\% but with unstable
-signs, as indicated by expected values hardly distinguishable from zero.
-All other variables had probabilities of inclusion less than 50\%. More
-detailed graphical information is reported in Supplementary Information.
-
-In the main models reported above, we have consciously chosen to include
-a large number of control variables because we are presently most
-concerned with testing our hypotheses and ruling out rival hypotheses.
-BMA provides further evidence that the models presented above likely
-contain superfluous independent variables. Though we believe it is best
-to rely primarily on the conservative estimates reported above, we
-briefly report how our coefficients of interest would change under
-different specifications suggested by the BMA. In a model with just
-those variables found to be the most robust to model selection
-(\emph{Fox News}, \emph{Obama}, \emph{MoralStatism}, and
-\emph{Government}), moving from 10th percentile of \emph{MoralStatism}
-to 90th within the 90th of \emph{Government}, is associated with the
-probablitity of supporting the Tea Party increasing from .01 (sd=.00) to
-.50 (sd=.06). Thus, the results from Bayesian Model Averaging suggest
-the main results reported above are highly robust and, if anything,
-conservative estimates of the partial correlation between misarchism and
-Tea Party support.
-
-\subsubsection{Multiple Imputation}\label{multiple-imputation}
-
-Another possible problem is that listwise deletion of all observations
-containing missing values may have led to biased estimates, as well as
-the simple inefficiency of lost information. In particular, if relative
-misarchists were more (or less) likely to respond to certain questions
-than other respondents, we may have over-estimated (or under-estimated)
-the true partial correlation between our misarchist terms and Tea Party
-support. One solution to this problem is multiple imputation of missing
-values, which refers to the process of using the information from
-observed variables to infer the most likely values for all missing
-cells. The process finishes by producing a set of new datasets each of
-which samples from the predictive distribution to assign most likely
-values to each missing cell. After multiple imputation, the models
-discussed above are re-estimated on each imputed dataset and the results
-are combined using ``Rubin's rules.'' Specifically, we use the R package
-\emph{Amelia} (Honaker, King, and Blackwell 2008) to generate 10
-versions of the ANES dataset with missing values imputed and
-\emph{Zelig} to obtain pooled regression results. The multiple
-imputation algorithm only assumes that missing values are ``missing at
-random,'' not necessarily ``missing completely at random.'' In this
-context, ``missing at random'' only means that missingness is dependent
-on the observed variables.
-
-After pooling the results, the estimates remain substantially the same.
-\emph{MoralStatism}, \emph{Government}, and the interaction term remain
-signed as in Model 2 with high statistical significance (.98,
-p\textless{}.00; -.68, p\textless{}.00; -1.35, p\textless{}.00,
-respectively). \emph{FoxNews} and \emph{BornAgain} also remain
-substantially the same. Graphical diagnostics for overimputation,
-dispersion, and comparing pre- and post-imputation densities for our
-main variables suggest no problems or anomolies in the imputation
-procedures. For the sake of brevity we have placed the full results
-table and further diagnostic information in Supplementary Information.
-
-\subsubsection{Matching and Sensitivity}\label{matching-and-sensitivity}
-
-To mitigate the risk of bias from non-random assignment into misarchism
-and guard against parametric model dependence, we employ matching to
-estimate the effect of misarchism from a subset of highly similar
-individuals. We use a genetic matching algorithm to identify that subset
-of the original dataset for which the distribution of each covariate is
-optimally balanced across both treatment and control groups (Diamond and
-Sekhon 2012; Sekhon 2011). In other words, the algorithm obtains the
-matched pairs of those ``treated'' and not treated to governmentalism
-and moral statism which are otherwise optimally balanced in the
-propensity to be treated. The average treatment effect for the treated
-obtained from this subset will approximate that which we would obtain
-from a randomized experiment, unless some unobserved factor shapes the
-propensity to be treated. Although the possibility of omitted variables
-can never be ruled out, we can quantify the sensitivity of these
-matching estimates to some potential unobserved source of bias. Thus, we
-also report sensitivity bounds as developed by Rosenbaum (Rosenbaum
-1988).
-
-We generate matching estimates for each of our three independent
-variables of interest, one at a time, using one-to-one genetic matching
-with replacement. In each case, ``treatment'' is defined as having a
-value above the sample mean of the variable of interest. For each
-estimate, we balance on all covariates in Model 2 except the two
-components of the interaction term and including the treatment
-variable's propensity scores with respect to those covariates. We do not
-balance on the components of the interaction term, or the interaction
-term itself, because this would remove the covariation of
-governmentalism and moral statism the effect of which we wish to test,
-but we do include the components and the interaction term as covariates.
-
-The average treatment effect on those ``treated'' with greater than the
-mean level of moral statism is 0.094, with a standard error of 0.057 and
-a p-value of 0.01. The Rosenbaum bounds for this effect suggest that for
-it to become statistically insignificant at the 95\% confidence level,
-the odds of differential assignment to treatment due to an unobserved
-factor would have to be about 2.03.\footnote{Rosenbaum bounds for a
-  binary dependent variable reported in this section are calculated
-  using the \emph{binarysens()} function in the R package
-  \emph{rbounds}. See (Keele 2014)} Thus, the partial correlation
-between moral statism and Tea Party support when \emph{Governmentalism}
-is set at its mean, as obtained in Model 2, does not appear to be an
-artifact of covariate imbalance or parametric modeling assumptions, and
-would require a fairly large unobserved source of bias to become
-insignificant.
-
-The average treatment effect on those ``treated'' with greater than the
-mean level of governmentalism is 0.002, with a standard error of 0.028
-and a p-value of 0.88. Therefore the partial correlation previously
-estimated between governmentalism and Tea Party support at mean levels
-of moral statism appears to have been a spurious result of those with
-high values of governmentalism having significantly different values of
-some covariate relative to those with low values of governmentalism.
-
-The average treatment effect on those ``treated'' with greater than the
-mean level of the interaction term is -0.048, with a standard error of
-0.019 and a p-value of 0.01. The Rosenbaum bounds for this effect
-suggest that for it to become statistically insignificant at the 95\%
-confidence level, the odds of differential assignment to treatment due
-to an unobserved factor would have to be about 1.43. Our key
-relationship of interest estimated in Model 2 therefore does not appear
-generated by systematic assignment into treatment due to any of the
-observed covariates and, as with the estimated effect of moral statism,
-would require a fairly large unobserved source of bias to become
-insignificant.
 
 \subsection{Conclusion}\label{conclusion}
 
@@ -1102,494 +932,280 @@ constellations structuring attitudes within the conventional left-right
 spectrum, raises questions about what other ideological constellations
 may mobilize different constituencies in American politics.
 
-\pagebreak
-
-\subsection{Supplementary Information}\label{supplementary-information}
-
-\paragraph{Contents}\label{contents}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  Scree plot for factor model
-\item
-  Numerical factor loadings
-\item
-  Comparing misarchism, conservatism, and Republicanism
-\item
-  Including Party ID as a covariate
-\item
-  Estimated effects of misarchism on Party ID and Conservatism
-\item
-  Ideology included in factor model and removed from regression
-\item
-  Probabilities of covariate inclusion from Bayesian Model Averaging
-\item
-  Expected value of coefficients from Bayesian Model Averaging
-\item
-  Pooled regression results after multiple imputation
-\item
-  Multiple imputation diagnostics
-\end{enumerate}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/scree-1.pdf}
-\caption{Biplot shows two main dimensions}
-\end{figure}
-
 \clearpage
 
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrr}
-  \hline
- & ML1 & ML2 \\ 
-  \hline
-Family & 0.03 & 0.59 \\ 
-  Guns & 0.40 & -0.05 \\ 
-  Intolerant & -0.12 & 0.44 \\ 
-  Morals & -0.22 & 0.36 \\ 
-  Wiretapping & 0.21 & 0.35 \\ 
-  Defense & 0.04 & 0.49 \\ 
-  Services & 0.78 & 0.01 \\ 
-  Immigration & -0.24 & 0.38 \\ 
-  Jobs & 0.61 & -0.04 \\ 
-   \hline
-\end{tabular}
-\caption{Factor Loadings} 
-\label{Factor Loadings}
-\end{table}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/descriptives-1.pdf}
-\caption{Correlation plot for different dimensions of right-wing
-attitudes}
-\end{figure}
-
-\clearpage
-
-\begin{table}[!htbp] \centering 
-  \caption{Alternative Dependent Variables for Model 2} 
-  \label{} 
-\footnotesize 
-\begin{tabular}{@{\extracolsep{5pt}}lcc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-3} 
-\\[-1.8ex] & PartyID (Republican) & Conservatism \\ 
-\\[-1.8ex] & (1) & (2)\\ 
-\hline \\[-1.8ex] 
- Gender (Male) & $-$0.006 & 0.008 \\ 
-  & (0.013) & (0.014) \\ 
-  Income & 0.032$^{**}$ & $-$0.003 \\ 
-  & (0.015) & (0.016) \\ 
-  Age & $-$0.057$^{***}$ & 0.025 \\ 
-  & (0.014) & (0.016) \\ 
-  Race (White) & 0.076$^{***}$ & $-$0.058$^{***}$ \\ 
-  & (0.015) & (0.017) \\ 
-  Education & 0.044$^{***}$ & $-$0.024 \\ 
-  & (0.015) & (0.017) \\ 
-  Obama & $-$0.545$^{***}$ & $-$0.103$^{***}$ \\ 
-  & (0.020) & (0.025) \\ 
-  Authoritarianism & $-$0.029$^{**}$ & 0.039$^{**}$ \\ 
-  & (0.015) & (0.016) \\ 
-  BornAgain & 0.016 & 0.030$^{*}$ \\ 
-  & (0.014) & (0.015) \\ 
-  Religion & 0.001 & 0.038$^{**}$ \\ 
-  & (0.015) & (0.017) \\ 
-  PartyID (Republican) &  & 0.321$^{***}$ \\ 
-  &  & (0.022) \\ 
-  FoxNews & 0.039$^{**}$ & 0.059$^{***}$ \\ 
-  & (0.015) & (0.017) \\ 
-  Conservatism & 0.256$^{***}$ &  \\ 
-  & (0.018) &  \\ 
-  MoralStatism & $-$0.001 & 0.259$^{***}$ \\ 
-  & (0.024) & (0.026) \\ 
-  Government & $-$0.103$^{***}$ & $-$0.100$^{***}$ \\ 
-  & (0.023) & (0.026) \\ 
-  MoralStatism*Government & 0.025 & 0.044 \\ 
-  & (0.026) & (0.029) \\ 
-  Constant & $-$0.051$^{***}$ & $-$0.009 \\ 
-  & (0.019) & (0.022) \\ 
- \hline \\[-1.8ex] 
-Observations & 2,406 & 2,406 \\ 
-R$^{2}$ & 0.674 & 0.523 \\ 
-Adjusted R$^{2}$ & 0.673 & 0.521 \\ 
-Residual Std. Error (df = 2391) & 0.305 & 0.342 \\ 
-F Statistic (df = 14; 2391) & 354.000$^{***}$ & 187.000$^{***}$ \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table}
-
-\clearpage
-
-\begin{table}[!htbp] \centering 
-  \caption{Including ideology in factor model and removing from regression model} 
-  \label{} 
-\footnotesize 
-\begin{tabular}{@{\extracolsep{5pt}}lc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-2} 
-\\[-1.8ex] & Tea Party Support \\ 
-\hline \\[-1.8ex] 
- Gender (Male) & 0.116 \\ 
-  & (0.128) \\ 
-  Income & $-$0.301$^{**}$ \\ 
-  & (0.148) \\ 
-  Age & $-$0.343$^{**}$ \\ 
-  & (0.144) \\ 
-  Race (White) & $-$0.404$^{**}$ \\ 
-  & (0.169) \\ 
-  Education & 0.066 \\ 
-  & (0.158) \\ 
-  Obama & $-$1.250$^{***}$ \\ 
-  & (0.222) \\ 
-  Authoritarianism & 0.035 \\ 
-  & (0.148) \\ 
-  BornAgain & 0.298$^{**}$ \\ 
-  & (0.135) \\ 
-  Religion & $-$0.013 \\ 
-  & (0.155) \\ 
-  PartyID (Republican) & 0.512$^{**}$ \\ 
-  & (0.199) \\ 
-  FoxNews & 0.707$^{***}$ \\ 
-  & (0.133) \\ 
-  MoralStatism & $-$0.556$^{**}$ \\ 
-  & (0.261) \\ 
-  Government & 0.923$^{***}$ \\ 
-  & (0.276) \\ 
-  MoralStatism*Government & 1.380$^{***}$ \\ 
-  & (0.268) \\ 
-  Constant & $-$2.700$^{***}$ \\ 
-  & (0.214) \\ 
- \hline \\[-1.8ex] 
-Observations & 2,406 \\ 
-Log Likelihood & $-$830.000 \\ 
-Akaike Inf. Crit. & 1,690.000 \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table}
-
-Individuals characterized by the highest observed levels of moral
-statism also in the 90th percentile of anti-governmentalism (below a
-value of -.7 on the governmentalism factor) have a probability of
-supporting the Tea Party around 40\%. To be more precise, moving from
-minimum to maxium moral statism while in the 10th percentile of
-governmentalism increases the probability of supporting the Tea Party by
-.39 (sd=.07) more than it would in the 90th percentile of
-govermentalism, from .01 (sd=.00) to .42, (sd=.07) rather than .05
-(sd=.02) to .03 (sd=.02).
-
-\clearpage
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/bma2-1.pdf}
-\caption{Inclusion Probabilites from Bayesian Model Averaging}
-\end{figure}
-
-\clearpage
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/bma3-1.pdf}
-\caption{Expected Values from Bayesian Model Averaging}
-\end{figure}
-
-\clearpage
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
- & Value & Std. Error & t-stat & p-value \\ 
-  \hline
-(Intercept) & -2.07 & 0.11 & -18.21 & 0.00 \\ 
-  Gender (Female) & -0.10 & 0.09 & -1.21 & 0.23 \\ 
-  Income & -0.27 & 0.11 & -2.54 & 0.01 \\ 
-  Age & -0.22 & 0.10 & -2.27 & 0.02 \\ 
-  Race (White) & -0.29 & 0.11 & -2.77 & 0.01 \\ 
-  Education & -0.02 & 0.11 & -0.21 & 0.83 \\ 
-  Obama & -0.95 & 0.14 & -6.92 & 0.00 \\ 
-  Authoritarianism & 0.10 & 0.10 & 0.97 & 0.33 \\ 
-  BornAgain & -0.26 & 0.09 & -2.76 & 0.01 \\ 
-  Religion & 0.03 & 0.10 & 0.32 & 0.75 \\ 
-  PartyID (Republican) & 0.21 & 0.13 & 1.61 & 0.11 \\ 
-  FoxNews & 0.71 & 0.10 & 7.40 & 0.00 \\ 
-  Conservatism & 0.98 & 0.13 & 7.46 & 0.00 \\ 
-  MoralStatism & 0.07 & 0.20 & 0.35 & 0.73 \\ 
-  Government & -0.86 & 0.18 & -4.70 & 0.00 \\ 
-  MoralStatism*Government & -0.85 & 0.21 & -3.96 & 0.00 \\ 
-   \hline
-\end{tabular}
-\caption{Pooled Logistic Regression Results From 10 Multiple Imputations} 
-\end{table}
-
-\clearpage
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/missing2-1.pdf}
-\caption{Distributions before and after multiple imputation}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/missing3-1.pdf}
-\caption{Distributions before and after multiple imputation}
-\end{figure}
-
-\clearpage
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/missing4-1.pdf}
-\caption{Diagnostic Plot for Overimputation (1)}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/missing5-1.pdf}
-\caption{Diagnostic Plot for Overimputation (2)}
-\end{figure}
-
-\clearpage
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/missing6-1.pdf}
-\caption{Diagnostic Plot for Dispersion}
-\end{figure}
-
-\clearpage
+\singlespacing
 
 \subsection{References}\label{references}
 
 \setlength{\parindent}{-0.2in} \setlength{\leftskip}{0.2in}
 \setlength{\parskip}{8pt} \vspace*{-0.2in} \noindent
 
+\hyperdef{}{ref-abramowitzux5fgrandux5f2012}{\label{ref-abramowitzux5fgrandux5f2012}}
 Abramowitz, Alan I. 2012. ``Grand Old Tea Party: Partisan Polarization
 and the Rise of the Tea Party Movement.'' In \emph{Steep: The
 Precipitous Rise of the Tea Party}, Berkeley, California: University of
 California Press, 195--211.
 
+\hyperdef{}{ref-althusserux5fideologyux5f1971}{\label{ref-althusserux5fideologyux5f1971}}
 Althusser, Louis. 1971. ``Ideology and Ideological State Apparatuses
 (Notes Towards an Investigation).'' In \emph{Lenin and Philosophy and
 Other Essays.}, New York: Monthly Review Press.
 
+\hyperdef{}{ref-arceneauxux5fwhoux5f2012}{\label{ref-arceneauxux5fwhoux5f2012}}
 Arceneaux, Kevin, and Stephen P. Nicholson. 2012. ``Who Wants to Have a
 Tea Party? The Who, What, and Why of the Tea Party Movement.'' \emph{PS:
 Political Science \& Politics} 45(04): 700--710.
 
+\hyperdef{}{ref-baileyux5fteaux5f2012}{\label{ref-baileyux5fteaux5f2012}}
 Bailey, Michael A., Jonathan Mummolo, and Hans Noel. 2012. ``Tea Party
 Influence: A Story of Activists and Elites.'' \emph{American Politics
 Research} 40(5): 769--804.
 
+\hyperdef{}{ref-berletux5freframingux5f2012}{\label{ref-berletux5freframingux5f2012}}
 Berlet, Chip. 2012. ``Reframing Populist Resentments in the Tea Party
 Movement.'' In \emph{Steep: The Precipitous Rise of the Tea Party}, eds.
 Christine Trost and Lawrence Rosenthal. Berkeley, California: University
 of California Press, 42--66.
 
+\hyperdef{}{ref-Bradberry:2014eq}{\label{ref-Bradberry:2014eq}}
 Bradberry, Leigh A, and Gary C Jacobson. 2014. ``The Tea Party and the
 2012 presidential election.'' \emph{Electoral Studies}.
 \href{Online only: http://bit.ly/1DsIbv9}{Online only: http://bit.ly/1DsIbv9}.
 
+\hyperdef{}{ref-brennanux5flibertarianismux5f2012}{\label{ref-brennanux5flibertarianismux5f2012}}
 Brennan, Jason. 2012. \emph{Libertarianism: What Everyone Should Know}.
 Oxford: Oxford University Press.
 
+\hyperdef{}{ref-brysonux5fpoliticalux5f1968}{\label{ref-brysonux5fpoliticalux5f1968}}
 Bryson, Maurice C., and William R. McDill. 1968. ``The Political
 Spectrum: A Bi-Dimensional Approach.'' \emph{Rampart Journal of
 Individualist Thought} 4(2).
 \url{https://mises.org/journals/rampart/Rampart_summer1968.pdf} (July
 21, 2015).
 
+\hyperdef{}{ref-burackux5fintroduction:ux5f2012}{\label{ref-burackux5fintroduction:ux5f2012}}
 Burack, Cynthia, and R. Claire Snyder-Hall. 2012. ``Introduction:
 Right-Wing Populism and the Media.'' \emph{New Political Science} 34(4):
 439--54. \url{http://dx.doi.org/10.1080/07393148.2012.729736} (July 28,
 2014).
 
+\hyperdef{}{ref-campbell1980american}{\label{ref-campbell1980american}}
 Campbell, Angus, Philip E Converse, Warren E Miller, and Donald E
 Stokes. 1960. \emph{The American Voter}. Chicago: University of Chicago
 Press.
 
+\hyperdef{}{ref-Carmines:2014wp}{\label{ref-Carmines:2014wp}}
 Carmines, Edward G, and Nicholas J D'Amico. 2014. ``The New Look in
 Political Ideology Research.'' \emph{Annual Review of Political Science}
 18(1): 205--16.
 
+\hyperdef{}{ref-Converse:1964bk}{\label{ref-Converse:1964bk}}
 Converse, Philip E. 1964. ``The Nature of Belief Systems in Mass
 Publics.'' In \emph{Ideology and Its Discontents}, ed. David E Apter.
 New York: The Free Press of Glencoe.
 
+\hyperdef{}{ref-courserux5fteaux5f2012}{\label{ref-courserux5fteaux5f2012}}
 Courser, Zachary. 2012. ``The Tea `Party' as a Conservative Social
 Movement.'' \emph{Society} 49(1): 43--53.
 \url{http://link.springer.com/article/10.1007/s12115-011-9501-0} (July
 28, 2014).
 
+\hyperdef{}{ref-Diamond:2012jo}{\label{ref-Diamond:2012jo}}
 Diamond, Alexis, and Jasjeet S Sekhon. 2012. ``Genetic Matching for
 Estimating Causal Effects: A General Multivariate Matching Method for
 Achieving Balance in Observational Studies.'' \emph{Review of Economics
 and Statistics} 95(3): 932--45.
 
+\hyperdef{}{ref-dischux5fteaux5f2011}{\label{ref-dischux5fteaux5f2011}}
 Disch, Lisa. 2011. ``Tea Party Movement: The American `Precariat'?''
 \emph{Representation} 47(2): 123--35.
 \url{http://dx.doi.org/10.1080/00344893.2011.581057} (July 28, 2014).
 
+\hyperdef{}{ref-eysenckux5fpsychologyux5f1960}{\label{ref-eysenckux5fpsychologyux5f1960}}
 Eysenck, Hans J. 1960. \emph{The Psychology of Politics}. Piscataway,
 New Jersey: Transaction Publishers.
 
+\hyperdef{}{ref-Fabrigar:1999cq}{\label{ref-Fabrigar:1999cq}}
 Fabrigar, Leandre R, Duane T Wegener, Robert C MacCallum, and Erin J
 Strahan. 1999. ``Evaluating the use of exploratory factor analysis in
 psychological research.'' \emph{Psychological Methods} 4(3): 272--99.
 
+\hyperdef{}{ref-foucaultux5fgovernmentalityux5f1991}{\label{ref-foucaultux5fgovernmentalityux5f1991}}
 Foucault, Michel. 1991. ``Governmentality.'' In \emph{The Foucault
 Effect: Studies in Governmentality}, eds. Graham Burchell, Colin Gordon,
 and Peter Miller. Chicago: University of Chicago Press, 87--104.
 
+\hyperdef{}{ref-freedenux5fideologyux5f2003}{\label{ref-freedenux5fideologyux5f2003}}
 Freeden, Michael. 2003. \emph{Ideology: A Very Short Introduction}.
 Oxford: Oxford University Press.
 
+\hyperdef{}{ref-gordonux5fgovernmentalux5f1991}{\label{ref-gordonux5fgovernmentalux5f1991}}
 Gordon, Colin. 1991. ``Governmental Rationality: An Introduction.'' In
 \emph{The Foucault Effect: Studies in Governmentality}, eds. Graham
 Burchell, Colin Gordon, and Peter Miller. Chicago: University Of Chicago
 Press, 1--52.
 
+\hyperdef{}{ref-gorenux5fvoterux5f2013}{\label{ref-gorenux5fvoterux5f2013}}
 Goren, Paul. 2013. \emph{On Voter Competence}. Oxford: Oxford University
 Press.
 
+\hyperdef{}{ref-Graham:2009er}{\label{ref-Graham:2009er}}
 Graham, Jesse, Jonathan Haidt, and Brian A Nosek. 2009. ``Liberals and
 conservatives rely on different sets of moral foundations.''
 \emph{Journal of Personality and Social Psychology} 96(5): 1029--46.
 \url{http://psycnet.apa.org/journals/psp/96/5/1029.html}.
 
+\hyperdef{}{ref-Haidt:2012vc}{\label{ref-Haidt:2012vc}}
 Haidt, Jonathan. 2012. \emph{The Righteous Mind: Why Good People are
 Divided by Politics and Religion}. New York: Pantheon.
 
+\hyperdef{}{ref-heywoodux5fpoliticalux5f2007}{\label{ref-heywoodux5fpoliticalux5f2007}}
 Heywood, Andrew. 2007. \emph{Political Ideologies}. 4th ed. Basingstoke:
 Palgrave Macmillan.
 
+\hyperdef{}{ref-hoffmanux5fbeyondux5f1995}{\label{ref-hoffmanux5fbeyondux5f1995}}
 Hoffman, John. 1995. \emph{Beyond the State: An Essay in Interpretation:
 An Introductory Critique}. Cambridge, UK: Polity Press.
 
+\hyperdef{}{ref-Honaker:2008vv}{\label{ref-Honaker:2008vv}}
 Honaker, James, Gary King, and Matthew Blackwell. 2008. ``Amelia II: A
 Program for Missing Data.'' \emph{Journal of Statistical Software}
 45(i07).
 
+\hyperdef{}{ref-huxleyux5fadministrativeux5f1871}{\label{ref-huxleyux5fadministrativeux5f1871}}
 Huxley, Thomas. 1871. ``Administrative Nihilism (1871).''
 \url{http://aleph0.clarku.edu/huxley/CE1/AdNil.html} (April 12, 2014).
 
+\hyperdef{}{ref-ZeligEveryonesSt:2009ts}{\label{ref-ZeligEveryonesSt:2009ts}}
 Imai, Kosuke, Gary King, and Olivia Lau. 2009. ``Zelig: Everyone's
 Statistical Software.'' \url{http://gking.harvard.edu/zelig}.
 
+\hyperdef{}{ref-publicux5freligionux5fresearchux5finstituteux5fsurvey2013}{\label{ref-publicux5freligionux5fresearchux5finstituteux5fsurvey2013}}
 Jones, Robert P, Daniel Cox, and Juhem Navarro-Rivera. 2013. ``2013
 American Values Survey: In Search of Libertarians in America.''
 \emph{Public Religion Research Institute}.
 \url{http://publicreligion.org/research/2013/10/2013-american-values-survey/}
 (September 18, 2014).
 
+\hyperdef{}{ref-karpowitzux5fteaux5f2011}{\label{ref-karpowitzux5fteaux5f2011}}
 Karpowitz, Christopher F., J. Quin Monson, Kelly D. Patterson, and
 Jeremy C. Pope. 2011. ``Tea Time in America? The Impact of the Tea Party
 Movement on the 2010 Midterm Elections.'' \emph{PS: Political Science \&
 Politics} 44(02): 303--9.
 
+\hyperdef{}{ref-rboundsPerformRos:2014vj}{\label{ref-rboundsPerformRos:2014vj}}
 Keele, Luke J. 2014. ``rbounds: Perform Rosenbaum bounds sensitivity
 tests for matched and unmatched data.''
 \url{https://cran.r-project.org/web/packages/rbounds}.
 
+\hyperdef{}{ref-knightux5ftransformationsux5f2006}{\label{ref-knightux5ftransformationsux5f2006}}
 Knight, Kathleen. 2006. ``Transformations of the Concept of Ideology in
 the Twentieth Century.'' \emph{American Political Science Review}
 100(04): 619.
 \url{http://www.journals.cambridge.org/abstract_S0003055406062502}
 (April 30, 2015).
 
+\hyperdef{}{ref-lewis2009american}{\label{ref-lewis2009american}}
 Lewis-Beck, Michael S, William G Jacoby, Helmut Norpoth, and Herbert F
 Weisberg. 2008. \emph{The American Voter Revisited}. Ann Arbor:
 University of Michigan Press.
 
+\hyperdef{}{ref-loux5fastroturfux5f2012}{\label{ref-loux5fastroturfux5f2012}}
 Lo, Clarence Y. H. 2012. ``Astroturf Versus Grass Roots: Scenes from
 Early Tea Party Mobilization.'' In \emph{Steep: The Precipitous Rise of
 the Tea Party}, eds. Lawrence Rosenthal and Christine Trost. Berkeley,
 California: University of California Press, 98--130.
 
+\hyperdef{}{ref-lowndesux5fpastux5f2012}{\label{ref-lowndesux5fpastux5f2012}}
 Lowndes, Joseph. 2012. ``The Past and Future of Race in the Tea Party
 Movement.'' In \emph{Steep: The Precipitous Rise of the Tea Party}, eds.
 Christine Trost and Lawrence Rosenthal. Berkeley, California: University
 of California Press, 152--70.
 
+\hyperdef{}{ref-marxux5fmarx-engelsux5f1978}{\label{ref-marxux5fmarx-engelsux5f1978}}
 Marx, Karl, and Friedrich Engels. 1978. \emph{The Marx-Engels Reader}.
 2nd Revised ed. ed. Robert C. Tucker. New York: W. W. Norton \& Company.
 
+\hyperdef{}{ref-Maxwell:2012ia}{\label{ref-Maxwell:2012ia}}
 Maxwell, Angie, and T Wayne Parent. 2012. ``The Obama Trigger:
 Presidential Approval and Tea Party Membership.'' \emph{Social Science
 Quarterly} 93(5): 1384--1401.
 \url{http://onlinelibrary.wiley.com.libproxy.temple.edu/doi/10.1111/j.1540-6237.2012.00907.x/full}.
 
+\hyperdef{}{ref-mccalmontux5fpoll2013}{\label{ref-mccalmontux5fpoll2013}}
 McCalmont, Lucy. 2013. ``Poll: Most Libertarians Don't Identify as Tea
 Partiers.'' \emph{POLITICO}. \url{http://politi.co/1Lr7tSe} (September
 18, 2014).
 
+\hyperdef{}{ref-Montgomery:2010fc}{\label{ref-Montgomery:2010fc}}
 Montgomery, Jacob M, and Brendan Nyhan. 2010. ``Bayesian Model
 Averaging: Theoretical Developments and Practical Applications.''
 \emph{Political Analysis} 18(2): 245--70.
 
+\hyperdef{}{ref-montgomeryux5fteaux5f2012}{\label{ref-montgomeryux5fteaux5f2012}}
 Montgomery, Peter. 2012. ``The Tea Party and the Religious Right
 Movements: Frenemies with Benefits.'' In \emph{Steep: The Precipitous
 Rise of the Tea Party}, eds. Christine Trost and Lawrence Rosenthal.
 Berkeley, California: University of California Press, 242--74.
 
+\hyperdef{}{ref-nietzscheux5fgenealogyux5f2007}{\label{ref-nietzscheux5fgenealogyux5f2007}}
 Nietzsche, Friedrich Wilhelm. 2007. \emph{On the Genealogy of Morality}.
 ed. Keith Ansell-Pearson. Cambridge, UK: Cambridge University Press.
 
+\hyperdef{}{ref-parkerchange2013}{\label{ref-parkerchange2013}}
 Parker, Christopher S., and Matt A. Barreto. 2013. \emph{Change They
 Can't Believe In: The Tea Party and Reactionary Politics in America}.
 Princeton University Press.
 
+\hyperdef{}{ref-BMABayesianModel:us}{\label{ref-BMABayesianModel:us}}
 Raftery, Adrian E et al. 2015. ``BMA: Bayesian Model Averaging.''
 \url{https://cran.r-project.org/web/packages/BMA/}.
 
+\hyperdef{}{ref-robinux5freactionaryux5f2013}{\label{ref-robinux5freactionaryux5f2013}}
 Robin, Corey. 2013. \emph{The Reactionary Mind: Conservatism from Edmund
 Burke to Sarah Palin}. New York: Oxford University Press USA.
 
+\hyperdef{}{ref-Robinson01012012}{\label{ref-Robinson01012012}}
 Robinson, William I., and Mario Barrera. 2012. ``Global Capitalism and
 Twenty-First Century Fascism: A US Case Study.'' \emph{Race \& Class}
 53(3): 4--29. \url{http://rac.sagepub.com/content/53/3/4.abstract}.
 
+\hyperdef{}{ref-Rosenbaum:1988fl}{\label{ref-Rosenbaum:1988fl}}
 Rosenbaum, Paul R. 1988. ``Sensitivity Analysis for Matching with
 Multiple Controls.'' \emph{Biometrika} 75(3): 577--81.
 
+\hyperdef{}{ref-Sekhon:2008wd}{\label{ref-Sekhon:2008wd}}
 Sekhon, Jasjeet S. 2011. ``Multivariate and Propensity Score Matching
 Software with Automated Balance Optimization: The Matching Package for
 R.'' \emph{Journal of Statistical Software} 42(7).
 
+\hyperdef{}{ref-skocpolux5fteaux5f2012}{\label{ref-skocpolux5fteaux5f2012}}
 Skocpol, Theda, and Vanessa Williamson. 2012. \emph{The Tea Party and
 the Remaking of Republican Conservatism}. Oxford: Oxford University
 Press.
 
+\hyperdef{}{ref-spencerux5fdataux5f1879}{\label{ref-spencerux5fdataux5f1879}}
 Spencer, Herbert. 1879. \emph{The Data of Ethics}. London: Williams and
 Norgate.
 
+\hyperdef{}{ref-weberux5fpoliticsux5f2004}{\label{ref-weberux5fpoliticsux5f2004}}
 Weber, Max. 2004. ``Politics as a Vocation.'' In \emph{The Vocation
 Lectures}, eds. David Owen and Tracy Strong. Indianapolis: Hackett
 Publishing, 32--94.
 
+\hyperdef{}{ref-williamsonux5fteaux5f2011}{\label{ref-williamsonux5fteaux5f2011}}
 Williamson, Vanessa, Theda Skocpol, and John Coggin. 2011. ``The Tea
 Party and the Remaking of Republican Conservatism.'' \emph{Perspectives
 on Politics} 9(01): 25--43.
 
+\hyperdef{}{ref-wilsonux5fwhereux5f2012}{\label{ref-wilsonux5fwhereux5f2012}}
 Wilson, Angelia R., and Cynthia Burack. 2012. ```Where Liberty Reigns
 and God Is Supreme': The Christian Right and the Tea Party Movement.''
 \emph{New Political Science} 34(2): 172--90.
 \url{http://dx.doi.org/10.1080/07393148.2012.676395} (July 28, 2014).
 
+\hyperdef{}{ref-zwolinskiux5fsocialux5f2015}{\label{ref-zwolinskiux5fsocialux5f2015}}
 Zwolinski, Matt. 2015. \emph{Social Darwinism and Social Justice:
 Herbert Spencer on Our Duties to the Poor}. Social Science Research
 Network. \url{http://papers.ssrn.com/abstract=2598818} (May 12, 2015).

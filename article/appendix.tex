@@ -134,23 +134,31 @@ We used an oblique rotation which allows for factors to be correlated. This is
 \centering
 \begin{tabular}{rrr}
   \hline
- & Moral Statism & Governmentalism \\ 
+ & ML1 & ML2 \\ 
   \hline
-Conservatism & 0.56 & -0.26 \\ 
-  Family & 0.64 & 0.08 \\ 
-  GunControl & -0.06 & 0.39 \\ 
-  Intolerant & 0.42 & -0.12 \\ 
-  Morals & 0.35 & -0.21 \\ 
-  Wiretapping & 0.37 & 0.24 \\ 
-  DefenseSpending & 0.54 & 0.08 \\ 
-  Services & -0.00 & 0.77 \\ 
-  ImmigrationChecks & 0.39 & -0.21 \\ 
-  JobGuarantee & -0.06 & 0.60 \\ 
+Family & 0.03 & 0.59 \\ 
+  Guns & 0.40 & -0.05 \\ 
+  Intolerant & -0.12 & 0.44 \\ 
+  Morals & -0.22 & 0.36 \\ 
+  Wiretapping & 0.21 & 0.35 \\ 
+  Defense & 0.04 & 0.49 \\ 
+  Services & 0.78 & 0.01 \\ 
+  Immigration & -0.24 & 0.38 \\ 
+  Jobs & 0.61 & -0.04 \\ 
    \hline
 \end{tabular}
 \caption{Factor Loadings} 
 \label{Factor Loadings}
 \end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/descriptives-1.pdf}
+\caption{Correlation plot for different dimensions of right-wing
+attitudes}
+\end{figure}
+
+
 
 \clearpage
 
@@ -166,50 +174,54 @@ Conservatism & 0.56 & -0.26 \\
 \\[-1.8ex] & PartyID (Republican) & Conservatism \\ 
 \\[-1.8ex] & (1) & (2)\\ 
 \hline \\[-1.8ex] 
- Gender (Male) & $-$0.005 & 0.005 \\ 
-  & (0.013) & (0.011) \\ 
-  Income & 0.033$^{**}$ & $-$0.002 \\ 
-  & (0.015) & (0.013) \\ 
-  Age & $-$0.068$^{***}$ & $-$0.029$^{**}$ \\ 
-  & (0.014) & (0.012) \\ 
-  Race (White) & 0.066$^{***}$ & $-$0.053$^{***}$ \\ 
-  & (0.016) & (0.013) \\ 
-  Education & 0.047$^{***}$ & 0.005 \\ 
-  & (0.015) & (0.013) \\ 
-  Obama & $-$0.549$^{***}$ & 0.068$^{***}$ \\ 
-  & (0.020) & (0.020) \\ 
-  Authoritarianism & $-$0.037$^{**}$ & $-$0.031$^{**}$ \\ 
-  & (0.015) & (0.013) \\ 
-  BornAgain & 0.014 & $-$0.007 \\ 
-  & (0.014) & (0.012) \\ 
-  Religion & 0.002 & 0.003 \\ 
-  & (0.015) & (0.013) \\ 
-  PartyID (Republican) &  & 0.172$^{***}$ \\ 
-  &  & (0.017) \\ 
-  FoxNews & 0.043$^{***}$ & 0.014 \\ 
-  & (0.015) & (0.013) \\ 
-  MoralStatism & 0.198$^{***}$ & 0.748$^{***}$ \\ 
-  & (0.026) & (0.022) \\ 
-  Government & $-$0.131$^{***}$ & $-$0.089$^{***}$ \\ 
-  & (0.024) & (0.021) \\ 
-  MoralStatism*Government & 0.022 & 0.060$^{***}$ \\ 
-  & (0.027) & (0.023) \\ 
-  Constant & $-$0.045$^{**}$ & 0.036$^{**}$ \\ 
-  & (0.020) & (0.017) \\ 
+ Gender (Male) & $-$0.006 & 0.008 \\ 
+  & (0.013) & (0.014) \\ 
+  Income & 0.032$^{**}$ & $-$0.003 \\ 
+  & (0.015) & (0.016) \\ 
+  Age & $-$0.057$^{***}$ & 0.025 \\ 
+  & (0.014) & (0.016) \\ 
+  Race (White) & 0.076$^{***}$ & $-$0.058$^{***}$ \\ 
+  & (0.015) & (0.017) \\ 
+  Education & 0.044$^{***}$ & $-$0.024 \\ 
+  & (0.015) & (0.017) \\ 
+  Obama & $-$0.545$^{***}$ & $-$0.103$^{***}$ \\ 
+  & (0.020) & (0.025) \\ 
+  Authoritarianism & $-$0.029$^{**}$ & 0.039$^{**}$ \\ 
+  & (0.015) & (0.016) \\ 
+  BornAgain & 0.016 & 0.030$^{*}$ \\ 
+  & (0.014) & (0.015) \\ 
+  Religion & 0.001 & 0.038$^{**}$ \\ 
+  & (0.015) & (0.017) \\ 
+  PartyID (Republican) &  & 0.321$^{***}$ \\ 
+  &  & (0.022) \\ 
+  FoxNews & 0.039$^{**}$ & 0.059$^{***}$ \\ 
+  & (0.015) & (0.017) \\ 
+  Conservatism & 0.256$^{***}$ &  \\ 
+  & (0.018) &  \\ 
+  MoralStatism & $-$0.001 & 0.259$^{***}$ \\ 
+  & (0.024) & (0.026) \\ 
+  Government & $-$0.103$^{***}$ & $-$0.100$^{***}$ \\ 
+  & (0.023) & (0.026) \\ 
+  MoralStatism*Government & 0.025 & 0.044 \\ 
+  & (0.026) & (0.029) \\ 
+  Constant & $-$0.051$^{***}$ & $-$0.009 \\ 
+  & (0.019) & (0.022) \\ 
  \hline \\[-1.8ex] 
 Observations & 2,406 & 2,406 \\ 
-R$^{2}$ & 0.661 & 0.712 \\ 
-Adjusted R$^{2}$ & 0.659 & 0.710 \\ 
-Residual Std. Error & 0.311 (df = 2392) & 0.266 (df = 2391) \\ 
-F Statistic & 359.000$^{***}$ (df = 13; 2392) & 422.000$^{***}$ (df = 14; 2391) \\ 
+R$^{2}$ & 0.674 & 0.523 \\ 
+Adjusted R$^{2}$ & 0.673 & 0.521 \\ 
+Residual Std. Error (df = 2391) & 0.305 & 0.342 \\ 
+F Statistic (df = 14; 2391) & 354.000$^{***}$ & 187.000$^{***}$ \\ 
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \end{table}
 
+
+
 \begin{table}[!htbp] \centering 
-  \caption{Including Party ID as a Covariate} 
+  \caption{Including ideology in factor model and removing from regression model} 
   \label{} 
 \footnotesize 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 
@@ -219,51 +231,59 @@ F Statistic & 359.000$^{***}$ (df = 13; 2392) & 422.000$^{***}$ (df = 14; 2391) 
 \cline{2-2} 
 \\[-1.8ex] & Tea Party Support \\ 
 \hline \\[-1.8ex] 
- Gender (Male) & 0.132 \\ 
-  & (0.129) \\ 
-  Income & $-$0.322$^{**}$ \\ 
+ Gender (Male) & 0.116 \\ 
+  & (0.128) \\ 
+  Income & $-$0.301$^{**}$ \\ 
   & (0.148) \\ 
-  Conservatism & 0.785$^{***}$ \\ 
-  & (0.255) \\ 
-  Age & $-$0.354$^{**}$ \\ 
-  & (0.145) \\ 
-  Race (White) & $-$0.419$^{**}$ \\ 
-  & (0.168) \\ 
-  Education & 0.057 \\ 
-  & (0.159) \\ 
-  Obama & $-$1.350$^{***}$ \\ 
-  & (0.224) \\ 
-  Authoritarianism & 0.052 \\ 
+  Age & $-$0.343$^{**}$ \\ 
+  & (0.144) \\ 
+  Race (White) & $-$0.404$^{**}$ \\ 
+  & (0.169) \\ 
+  Education & 0.066 \\ 
+  & (0.158) \\ 
+  Obama & $-$1.250$^{***}$ \\ 
+  & (0.222) \\ 
+  Authoritarianism & 0.035 \\ 
   & (0.148) \\ 
-  BornAgain & 0.288$^{**}$ \\ 
+  BornAgain & 0.298$^{**}$ \\ 
   & (0.135) \\ 
-  Religion & $-$0.027 \\ 
-  & (0.156) \\ 
-  PartyID (Republican) & 0.313 \\ 
-  & (0.202) \\ 
-  FoxNews & 0.682$^{***}$ \\ 
-  & (0.134) \\ 
-  MoralStatism & 0.093 \\ 
-  & (0.337) \\ 
-  Government & $-$0.670$^{**}$ \\ 
-  & (0.265) \\ 
-  MoralStatism*Government & $-$1.510$^{***}$ \\ 
-  & (0.321) \\ 
-  Constant & $-$2.570$^{***}$ \\ 
-  & (0.208) \\ 
+  Religion & $-$0.013 \\ 
+  & (0.155) \\ 
+  PartyID (Republican) & 0.512$^{**}$ \\ 
+  & (0.199) \\ 
+  FoxNews & 0.707$^{***}$ \\ 
+  & (0.133) \\ 
+  MoralStatism & $-$0.556$^{**}$ \\ 
+  & (0.261) \\ 
+  Government & 0.923$^{***}$ \\ 
+  & (0.276) \\ 
+  MoralStatism*Government & 1.380$^{***}$ \\ 
+  & (0.268) \\ 
+  Constant & $-$2.700$^{***}$ \\ 
+  & (0.214) \\ 
  \hline \\[-1.8ex] 
 Observations & 2,406 \\ 
-Log Likelihood & $-$828.000 \\ 
-Akaike Inf. Crit. & 1,688.000 \\ 
+Log Likelihood & $-$830.000 \\ 
+Akaike Inf. Crit. & 1,690.000 \\ 
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \end{table}
 
+Individuals characterized by the highest observed levels of moral
+statism also in the 90th percentile of anti-governmentalism (below a
+value of -.7 on the governmentalism factor) have a probability of
+supporting the Tea Party around 40\%. To be more precise, moving from
+minimum to maxium moral statism while in the 10th percentile of
+governmentalism increases the probability of supporting the Tea Party by
+.39 (sd=.07) more than it would in the 90th percentile of
+govermentalism, from .01 (sd=.00) to .42, (sd=.07) rather than .05
+(sd=.02) to .03 (sd=.02).
+
 \clearpage
 
-Additional information on Bayesian Model Averaging
+Bayesian Model Averaging
 
 A version of the R package \emph{BMA} modified by
 Mongtomery and Nyhan was used to search over the entire model space of
@@ -274,6 +294,66 @@ uniform priors for all independent variables and the only restriction is
 that the interaction term and its two component variables are required
 to enter or not enter models together. Options were set to be least restrictive.
 No Occam's Window was used to narrow the models selected by the initial leap algorithm run over the entire model space and, following Montgomery and Nyhan (pp.~21), the number of best models of each size returned by the leaps algorithm was set to 100,000. In the end, 4,096 models were selected.
+
+Regression results such as those presented above are sometimes sensitive
+to minor differences in model specification, such as including or
+excluding one variable. Because we do not know the true model, an
+idiosyncratic search for optimal model specifications can lead to bias.
+One risk is publication bias, if researchers prefer models that confirm
+their hypotheses. Another is loss of efficiency if too many unnecessary
+variables are included. Finally, an \emph{ad hoc} approach leads to
+incomplete representations of model uncertainty (J. M. Montgomery and
+Nyhan 2010, 4). An increasingly widespread solution in political science
+is Bayesian Model Averaging (BMA), which estimates all possible models
+from a set of variables provides posterior probabilities for all
+possible coefficients and models.
+
+In particular, a version of the R package \emph{BMA} modified by
+Mongtomery and Nyhan was used to search over the entire model space of
+Model 2.\footnote{The analysis was conducted using the
+  \emph{bic.glmMN()} function, which is a version of the
+  \emph{bic.glm()} function in the R package \emph{BMA}. See (Raftery et
+  al. 2015) and (J. M. Montgomery and Nyhan 2010)} The analysis uses
+uniform priors for all independent variables and the only restriction is
+that the interaction term and its two component variables are required
+to enter or not enter models together.\footnote{Options were set to be
+  least restrictive. No Occam's Window was used to narrow the models
+  selected by the initial leap algorithm run over the entire model space
+  and, following Montgomery and Nyhan (pp.~21), the number of best
+  models of each size returned by the leaps algorithm was set to 100,000}
+In the end, 4,096 models were selected.
+
+The results show that the misarchist terms are highly robust to model
+selection, with a posterior probability of inclusion equal to 100\% (one
+minus the cumulative posterior probability of all models excluding
+them). The expected value of the coefficient for \emph{MoralStatism} is
+.78 (sd=.29), for \emph{Government} it is -.71 (sd=.26), and for the
+interaction term it is -1.43 (sd=.31). \emph{Obama} and \emph{FoxNews}
+also had probabilities of inclusion equal to 100\% with expected values
+not dissimilar to those estimated in Model 2. \emph{Age} and \emph{Race}
+had probabilities of inclusion greater than 50\% but with unstable
+signs, as indicated by expected values hardly distinguishable from zero.
+All other variables had probabilities of inclusion less than 50\%. More
+detailed graphical information is reported in Supplementary Information.
+
+In the main models reported above, we have consciously chosen to include
+a large number of control variables because we are presently most
+concerned with testing our hypotheses and ruling out rival hypotheses.
+BMA provides further evidence that the models presented above likely
+contain superfluous independent variables. Though we believe it is best
+to rely primarily on the conservative estimates reported above, we
+briefly report how our coefficients of interest would change under
+different specifications suggested by the BMA. In a model with just
+those variables found to be the most robust to model selection
+(\emph{Fox News}, \emph{Obama}, \emph{MoralStatism}, and
+\emph{Government}), moving from 10th percentile of \emph{MoralStatism}
+to 90th within the 90th of \emph{Government}, is associated with the
+probablitity of supporting the Tea Party increasing from .01 (sd=.00) to
+.50 (sd=.06). Thus, the results from Bayesian Model Averaging suggest
+the main results reported above are highly robust and, if anything,
+conservative estimates of the partial correlation between misarchism and
+Tea Party support.
+
 
 \begin{figure}[htbp]
 \centering
@@ -291,7 +371,7 @@ No Occam's Window was used to narrow the models selected by the initial leap alg
 
 \clearpage
 
-Additional information on Multiple Imputation
+Multiple Imputation
 
 We use the R package \emph{Amelia} (Honaker, King, and Blackwell 2008) to generate 10
 versions of the ANES dataset with missing values imputed and
@@ -304,31 +384,66 @@ dispersion, and comparing pre- and post-imputation densities for our
 main variables suggest no problems or anomolies in the imputation
 procedures (see below the numerical results).
 
+Another possible problem is that listwise deletion of all observations
+containing missing values may have led to biased estimates, as well as
+the simple inefficiency of lost information. In particular, if relative
+misarchists were more (or less) likely to respond to certain questions
+than other respondents, we may have over-estimated (or under-estimated)
+the true partial correlation between our misarchist terms and Tea Party
+support. One solution to this problem is multiple imputation of missing
+values, which refers to the process of using the information from
+observed variables to infer the most likely values for all missing
+cells. The process finishes by producing a set of new datasets each of
+which samples from the predictive distribution to assign most likely
+values to each missing cell. After multiple imputation, the models
+discussed above are re-estimated on each imputed dataset and the results
+are combined using ``Rubin's rules.'' Specifically, we use the R package
+\emph{Amelia} (Honaker, King, and Blackwell 2008) to generate 10
+versions of the ANES dataset with missing values imputed and
+\emph{Zelig} to obtain pooled regression results. The multiple
+imputation algorithm only assumes that missing values are ``missing at
+random,'' not necessarily ``missing completely at random.'' In this
+context, ``missing at random'' only means that missingness is dependent
+on the observed variables.
+
+After pooling the results, the estimates remain substantially the same.
+\emph{MoralStatism}, \emph{Government}, and the interaction term remain
+signed as in Model 2 with high statistical significance (.98,
+p\textless{}.00; -.68, p\textless{}.00; -1.35, p\textless{}.00,
+respectively). \emph{FoxNews} and \emph{BornAgain} also remain
+substantially the same. Graphical diagnostics for overimputation,
+dispersion, and comparing pre- and post-imputation densities for our
+main variables suggest no problems or anomolies in the imputation
+procedures. For the sake of brevity we have placed the full results
+table and further diagnostic information in Supplementary Information.
+
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
   \hline
  & Value & Std. Error & t-stat & p-value \\ 
   \hline
-(Intercept) & -2.08 & 0.12 & -18.04 & 0.00 \\ 
-  Gender (Female) & -0.10 & 0.09 & -1.12 & 0.26 \\ 
-  Income & -0.33 & 0.10 & -3.33 & 0.00 \\ 
-  Age & -0.30 & 0.09 & -3.38 & 0.00 \\ 
-  Race (White) & -0.30 & 0.11 & -2.68 & 0.01 \\ 
-  Education & -0.04 & 0.10 & -0.43 & 0.66 \\ 
-  Obama & -0.99 & 0.14 & -7.04 & 0.00 \\ 
-  Authoritarianism & 0.06 & 0.11 & 0.60 & 0.55 \\ 
-  BornAgain & -0.21 & 0.12 & -1.77 & 0.08 \\ 
-  Religion & 0.02 & 0.09 & 0.19 & 0.85 \\ 
-  PartyID (Republican) & 0.23 & 0.13 & 1.75 & 0.08 \\ 
-  FoxNews & 0.66 & 0.10 & 6.90 & 0.00 \\ 
-  MoralStatism & 0.98 & 0.18 & 5.35 & 0.00 \\ 
-  Government & -0.67 & 0.17 & -4.03 & 0.00 \\ 
-  MoralStatism*Government & -1.34 & 0.20 & -6.76 & 0.00 \\ 
+(Intercept) & -2.07 & 0.11 & -18.21 & 0.00 \\ 
+  Gender (Female) & -0.10 & 0.09 & -1.21 & 0.23 \\ 
+  Income & -0.27 & 0.11 & -2.54 & 0.01 \\ 
+  Age & -0.22 & 0.10 & -2.27 & 0.02 \\ 
+  Race (White) & -0.29 & 0.11 & -2.77 & 0.01 \\ 
+  Education & -0.02 & 0.11 & -0.21 & 0.83 \\ 
+  Obama & -0.95 & 0.14 & -6.92 & 0.00 \\ 
+  Authoritarianism & 0.10 & 0.10 & 0.97 & 0.33 \\ 
+  BornAgain & -0.26 & 0.09 & -2.76 & 0.01 \\ 
+  Religion & 0.03 & 0.10 & 0.32 & 0.75 \\ 
+  PartyID (Republican) & 0.21 & 0.13 & 1.61 & 0.11 \\ 
+  FoxNews & 0.71 & 0.10 & 7.40 & 0.00 \\ 
+  Conservatism & 0.98 & 0.13 & 7.46 & 0.00 \\ 
+  MoralStatism & 0.07 & 0.20 & 0.35 & 0.73 \\ 
+  Government & -0.86 & 0.18 & -4.70 & 0.00 \\ 
+  MoralStatism*Government & -0.85 & 0.21 & -3.96 & 0.00 \\ 
    \hline
 \end{tabular}
 \caption{Pooled Logistic Regression Results From 10 Multiple Imputations} 
 \end{table}
+
 
 \clearpage
 
@@ -366,7 +481,7 @@ procedures (see below the numerical results).
 \caption{Diagnostic Plot for Dispersion}
 \end{figure}
 
-Additional information on matching estimates and sensitivity bounds
+Matching estimates and sensitivity bounds
 
 Rosenbaum bounds (1988) for a binary dependent variable are calculated using the \emph{binarysens()} function in the R package \emph{rbounds}. See Keele (2014). We generate matching estimates for each of our three independent
 variables of interest, one at a time, using one-to-one genetic matching
@@ -375,6 +490,72 @@ value above the sample mean of the variable of interest. For each
 estimate, we balance on all covariates in Model 2 except the two
 components of the interaction term and including the treatment
 variable's propensity scores with respect to those covariates.
+
+To mitigate the risk of bias from non-random assignment into misarchism
+and guard against parametric model dependence, we employ matching to
+estimate the effect of misarchism from a subset of highly similar
+individuals. We use a genetic matching algorithm to identify that subset
+of the original dataset for which the distribution of each covariate is
+optimally balanced across both treatment and control groups (Diamond and
+Sekhon 2012; Sekhon 2011). In other words, the algorithm obtains the
+matched pairs of those ``treated'' and not treated to governmentalism
+and moral statism which are otherwise optimally balanced in the
+propensity to be treated. The average treatment effect for the treated
+obtained from this subset will approximate that which we would obtain
+from a randomized experiment, unless some unobserved factor shapes the
+propensity to be treated. Although the possibility of omitted variables
+can never be ruled out, we can quantify the sensitivity of these
+matching estimates to some potential unobserved source of bias. Thus, we
+also report sensitivity bounds as developed by Rosenbaum (Rosenbaum
+1988).
+
+We generate matching estimates for each of our three independent
+variables of interest, one at a time, using one-to-one genetic matching
+with replacement. In each case, ``treatment'' is defined as having a
+value above the sample mean of the variable of interest. For each
+estimate, we balance on all covariates in Model 2 except the two
+components of the interaction term and including the treatment
+variable's propensity scores with respect to those covariates. We do not
+balance on the components of the interaction term, or the interaction
+term itself, because this would remove the covariation of
+governmentalism and moral statism the effect of which we wish to test,
+but we do include the components and the interaction term as covariates.
+
+The average treatment effect on those ``treated'' with greater than the
+mean level of moral statism is 0.094, with a standard error of 0.057 and
+a p-value of 0.01. The Rosenbaum bounds for this effect suggest that for
+it to become statistically insignificant at the 95\% confidence level,
+the odds of differential assignment to treatment due to an unobserved
+factor would have to be about 2.03.\footnote{Rosenbaum bounds for a
+  binary dependent variable reported in this section are calculated
+  using the \emph{binarysens()} function in the R package
+  \emph{rbounds}. See (Keele 2014)} Thus, the partial correlation
+between moral statism and Tea Party support when \emph{Governmentalism}
+is set at its mean, as obtained in Model 2, does not appear to be an
+artifact of covariate imbalance or parametric modeling assumptions, and
+would require a fairly large unobserved source of bias to become
+insignificant.
+
+The average treatment effect on those ``treated'' with greater than the
+mean level of governmentalism is 0.002, with a standard error of 0.028
+and a p-value of 0.88. Therefore the partial correlation previously
+estimated between governmentalism and Tea Party support at mean levels
+of moral statism appears to have been a spurious result of those with
+high values of governmentalism having significantly different values of
+some covariate relative to those with low values of governmentalism.
+
+The average treatment effect on those ``treated'' with greater than the
+mean level of the interaction term is -0.048, with a standard error of
+0.019 and a p-value of 0.01. The Rosenbaum bounds for this effect
+suggest that for it to become statistically insignificant at the 95\%
+confidence level, the odds of differential assignment to treatment due
+to an unobserved factor would have to be about 1.43. Our key
+relationship of interest estimated in Model 2 therefore does not appear
+generated by systematic assignment into treatment due to any of the
+observed covariates and, as with the estimated effect of moral statism,
+would require a fairly large unobserved source of bias to become
+insignificant.
+
 
 \clearpage
 

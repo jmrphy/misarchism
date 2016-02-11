@@ -1,6 +1,6 @@
 
 
-require(Zelig)
+#require(Zelig)
 require(car)
 
 factor.vars$bornagain<-relevel(factor.vars$bornagain, ref="2. no")

@@ -1,3 +1,7 @@
 Workflow for submission 2
 
 References and appendix separated from .tex file, which was kept from last Rmarkdown processing. Thus work from main .tex and appendix.tex.
+
+But make changes in .rmd too. Run code in .Rmd manually to add/edit .tex.
+
+Keep .rmd set to keeptex:no.
