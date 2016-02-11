@@ -5,7 +5,7 @@ header-includes:
 output:
   pdf_document:
     fig_caption: yes
-    keep_tex: yes
+    keep_tex: no
     latex_engine: xelatex
 linkcolor: black
 urlcolor: red
@@ -139,7 +139,7 @@ stargazer(model1, model2, header=FALSE, font.size="footnotesize", no.space=TRUE,
 ```{r effect-plot1, cache=FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height=6, fig.width=6, fig.cap="The Effect of Moral Statism Conditional on Govermentalism (Gov)"}
 require(visreg)
 
-source("/Users/justin/Dropbox/R\ Code/multiplot.R")
+source("/Users/justin/Dropbox/code/multiplot.R")
 
 visreg(model2, "MoralStatism", by="Gov", overlay=T, scale="response", breaks=c(-.7,0,.6),
        line=list(lty=c(1,2,3)))
