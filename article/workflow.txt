@@ -1,7 +1,5 @@
-Workflow for submission 2
+Workflow for resubmission
 
-References and appendix separated from .tex file, which was kept from last Rmarkdown processing. Thus work from main .tex and appendix.tex.
-
-But make changes in .rmd too. Run code in .Rmd manually to add/edit .tex.
-
-Keep .rmd set to keeptex:no.
+Do everything from within misarchism.Rmd
+Write letter planning changes to first_submission/“misarchism_submitted.tex”
+When all changes made to misarchism.Rmd, copy and paste from misarchism.tex into misarchism_submitted.tex
