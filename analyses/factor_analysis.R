@@ -42,7 +42,7 @@ set.seed(666)
 ### Factor analysis in paper ###########
 ########################################
 
-# "15:length" excludes party id, "14:length" includes it
+# "15:length" excludes traditional ideology (conservatism), "14:length" includes it
 
 fit <- fa(factor.vars[15:length(factor.vars)], nfactors=2,
           rotate = "oblimin", fm = "ml", warnings=FALSE,
@@ -65,8 +65,14 @@ fad2<-factor.vars[14:length(factor.vars)] # "factor analysis data" for later che
 detach("package:psych", unload=TRUE)
 require(arm)
 
-factor.vars$Government2 <- rescale(fit2$scores[,1])
-factor.vars$MoralStatism2 <- rescale(fit2$scores[,2])
+# 'fa' function spits out the factors in opposite order this time
+# See this in load2
+factor.vars$Government2 <- rescale(fit2$scores[,2])
+factor.vars$MoralStatism2 <- rescale(fit2$scores[,1])
+load2 <- as.data.frame(fit2$loadings[,1:2])
+
+###############################################
+### Factor plot in main text
 ###############################################
 
 load <- as.data.frame(fit$loadings[,1:2])
