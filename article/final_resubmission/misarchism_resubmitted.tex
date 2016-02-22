@@ -631,74 +631,31 @@ Nonetheless, they strengthen support for our argument and contradict the
 common interpretation of Tea Party supporters as simply extreme
 conservatives or extreme Republicans.
 
-\textbf{Robustness}
-
-\emph{Bayesian Model Averaging.} Because we cannot know the true model, an
-idiosyncratic search for optimal model specifications can lead to multiple types of bias (Montgomery and
-Nyhan 2010, 4). An increasingly widespread solution in political science
-is Bayesian Model Averaging (BMA), which estimates all possible models
-from a set of variables and provides posterior probabilities for all
-possible coefficients and models. Additional technical information, more detailed results, and diagnostics for all three robustness checks can be found in Supplementary Information.
-
-When Bayesian Model Averaging is applied to the entire model space of Model 2, the results show that the misarchist terms are highly robust to model
-selection, with a posterior probability of inclusion equal to 100\% (one
-minus the cumulative posterior probability of all models excluding
-them). The expected value of the coefficient for \emph{MoralStatism} is
-.78 (sd=.29), for \emph{Government} it is -.71 (sd=.26), and for the
-interaction term it is -1.43 (sd=.31). In a model with just those variables found to be the most robust to model selection
-(\emph{Fox News}, \emph{Obama}, \emph{MoralStatism}, and
-\emph{Government}), moving from 10th percentile of \emph{MoralStatism}
-to 90th within the 90th of \emph{Government}, is associated with the
-probablitity of supporting the Tea Party increasing from .01 (sd=.00) to
-.50 (sd=.06). Thus, the results from Bayesian Model Averaging suggest
-the main results reported above are highly robust and, if anything,
-conservative estimates of the partial correlation between misarchism and
-Tea Party support.
-
-\emph{Multiple Imputation}. Another possible problem is that listwise deletion of all observations
-containing missing values may have led to biased estimates, as well as
-the simple inefficiency of lost information. One solution to this problem is multiple imputation of missing
-values, which refers to the process of using the information from
-observed variables to infer the most likely values for all missing
-cells. The process finishes by producing a set of new datasets each of
-which samples from the predictive distribution to assign most likely
-values to each missing cell. After multiple imputation, the models
-discussed above are re-estimated on each imputed dataset and the results
-are combined. After pooling the results, the estimates remain substantially the same.
-\emph{MoralStatism}, \emph{Government}, and the interaction term remain
-signed as in Model 2 with high statistical significance (.98,
-p\textless{}.00; -.68, p\textless{}.00; -1.35, p\textless{}.00,
-respectively). \emph{FoxNews} and \emph{BornAgain} also remain
-substantially the same.
-
-
-\emph{Matching and Sensitivity}. To guard against parametric model dependence, we employ matching to
-estimate the effect of misarchism from a subset of highly similar
-individuals. We use a genetic matching algorithm to identify that subset
-of the original dataset for which the distribution of each covariate is
-optimally balanced across both treatment and control groups (Sekhon 2011). In other words, the algorithm obtains the
-matched pairs of those ``treated'' and not treated to governmentalism
-and moral statism which are otherwise optimally balanced in the
-propensity to be treated. Although the possibility of omitted variables
-can never be ruled out, we quantify the sensitivity of our estimates to some potential unobserved source of bias, using sensitivity bounds as developed by Rosenbaum (1988).
-
-The average treatment effect on those ``treated'' with greater than the
-mean level of moral statism is 0.163, with a standard error of 0.061 and
-a p-value of 0.01. The Rosenbaum bounds for this effect suggest that for
-it to become statistically insignificant at the 95\% confidence level,
-the odds of differential assignment to treatment due to an unobserved
-factor would have to be about 2.03. The average treatment effect on those ``treated'' with greater than the
-mean level of governmentalism is 0.004, with a standard error of 0.026
-and a p-value of 0.88. The average treatment effect on those ``treated'' with greater than the
-mean level of the interaction term is -0.055, with a standard error of
-0.021 and a p-value of 0.01. The Rosenbaum bounds for this effect
-suggest that for it to become statistically insignificant at the 95\%
-confidence level, the odds of differential assignment to treatment due
-to an unobserved factor would have to be about 1.43. 
-
-Thus, while the partial correlation between governmentalism and Tea Party may be a spurious artifact of the parametric model, the partial correlation between moral statism and Tea Party support, and that reflecting our main argument (the interaction of anti-governmentalism and moral statism), do not appear dependent on the parametric model and
-would require a fairly large unobserved source of bias to become
-insignificant.
+To check the robustness of our results, we also executed a series of
+additional analyses. The full results from these analyses, with
+additional detail on the procedures and discussion of the results, can
+be found in Supplementary Information. In short, we consider three main
+threats to regression-based inferences from observational data. First,
+to guard against parametric model dependence, we use a genetic matching
+algorithm to identify that subset of the original dataset for which the
+distribution of each covariate is optimally balanced across both
+treatment and control groups (Diamond and Sekhon 2012).
+From this subset of matched pairs we estimate an average treatment
+effect for those ``treated'' to the misarchist interaction. Second,
+because we do not know the true model, an idiosyncratic search for
+optimal model specifications can lead to bias (J. M. Montgomery and
+Nyhan 2010, 4). To gauge the sensitivity of our results to model
+selection, we use Bayesian Model Averaging (BMA) to calculate posterior
+probabilities for all possible coefficients and models in order to
+identify the most likely models and variables. Finally, another possible
+problem is that listwise deletion of all observations containing missing
+values may have led to biased estimates. To consider this, we employ
+multiple imputation of missing values and re-estimate the regression
+models. While all of these robustness checks provide additional
+information and important nuance for evaluating our main argument,
+overall they suggest the conclusions we have drawn here are not merely
+artifacts of parametric model dependence, arbitrary model selection, or
+missing data, respectively.
 
 \textbf{Conclusion}\label{conclusion}
 
@@ -794,6 +751,11 @@ New York: The Free Press of Glencoe.
 
 Courser, Zachary. 2012. ``The Tea `Party' as a Conservative Social
 Movement.'' \emph{Society} 49(1): 43--53.
+
+Diamond, Alexis, and Jasjeet S Sekhon. 2012. ``Genetic Matching for
+Estimating Causal Effects: A General Multivariate Matching Method for
+Achieving Balance in Observational Studies.'' \emph{Review of Economics
+and Statistics} 95(3): 932--45.
 
 Disch, Lisa. 2011. ``Tea Party Movement: The American `Precariat'?''
 \emph{Representation} 47(2): 123--35.
