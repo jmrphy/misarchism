@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.10)  22 FEB 2016 15:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.10)  22 FEB 2016 16:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1034,11 +1034,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 523.
  ) 
 Here is how much of TeX's memory you used:
- 12314 strings out of 493089
- 178659 string characters out of 6134841
+ 12312 strings out of 493089
+ 178643 string characters out of 6134841
  285046 words of memory out of 5000000
  15466 multiletter control sequences out of 15000+600000
- 66446 words of font info for 107 fonts, out of 8000000 for 9000
+ 66355 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  31i,10n,35p,245b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
@@ -1060,7 +1060,7 @@ t/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
 1/public/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/l
 m/lmri12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.p
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on appendix_resubmitted.pdf (19 pages, 870706 bytes).
+Output written on appendix_resubmitted.pdf (19 pages, 870914 bytes).
 PDF statistics:
  286 PDF objects out of 1000 (max. 8388607)
  224 compressed objects within 3 object streams
