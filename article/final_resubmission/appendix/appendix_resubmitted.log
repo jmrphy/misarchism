@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.10)  22 FEB 2016 14:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.10)  22 FEB 2016 15:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1016,26 +1016,26 @@ Package pdftex.def Info: figures/missing6-1.pdf used on input line 442.
  [17
 
  <./figures/missing6-1.pdf>] [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 509.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 523.
  [19
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 509.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 523.
 
 (./appendix_resubmitted.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 509.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 509.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 523.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 523.
 Package rerunfilecheck Info: File `appendix_resubmitted.out' has not changed.
 (rerunfilecheck)             Checksum: AA054C10D399B613E528A03138E7D7DC;576.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 509.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 523.
  ) 
 Here is how much of TeX's memory you used:
  12314 strings out of 493089
- 178661 string characters out of 6134841
+ 178659 string characters out of 6134841
  285046 words of memory out of 5000000
  15466 multiletter control sequences out of 15000+600000
  66446 words of font info for 107 fonts, out of 8000000 for 9000
@@ -1060,10 +1060,10 @@ t/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
 1/public/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/l
 m/lmri12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.p
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on appendix_resubmitted.pdf (19 pages, 868905 bytes).
+Output written on appendix_resubmitted.pdf (19 pages, 870706 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
+ 286 PDF objects out of 1000 (max. 8388607)
+ 224 compressed objects within 3 object streams
  49 named destinations out of 1000 (max. 500000)
  14414 words of extra memory for PDF output out of 17280 (max. 10000000)
 

@@ -36,7 +36,7 @@ names(bmastats)<-c("Probability", "Variables")
 bmastats$Variables<-as.factor(bmastats$Variables)
 bmastats$Variables<-c("Gender (Male)", "Income", "Age", "Race (White)",
 "Education", "Obama", "Authoritarianism", "BornAgain", "Religion",
-"PartyID (Republican)", "FoxNews", "Conservative", "MoralStatism", "Government",
+"PartyID (Republican)", "FoxNews", "Conservatism", "MoralStatism", "Government",
 "MoralStatism*Government")
 bmastats$Variables<-reorder(bmastats$Variables, bmastats$Probability)
 

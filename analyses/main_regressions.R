@@ -157,17 +157,18 @@ ms.hi.g.low.out.cons <- sim(model2.cons.z, x = ms.hi.g.low.cons)
 msgout2.cons <- sim(model2.cons.z, x = ms.low.g.low.cons, x1 = ms.hi.g.low.cons)
 
 # Most likely model according to BMA?
-model2.z.reduced<-zelig(tea_supp ~ Obama + fox +inc_incgroup_pre + dem_age_r_x +
-                          white + libcpre_self + MoralStatism + Government + MoralStatism:Government,
+model2.z.reduced<-zelig(tea_supp ~ Obama + fox + libcpre_self + MoralStatism + Government + MoralStatism:Government,
                 model="logit",
                 data=factor.vars,
                 cite=F)
 
-msg.low<-setx(model2.z.reduced, MoralStatism=seq(min(factor.vars$MoralStatism),max(factor.vars$MoralStatism), by=.075),
-              Government=quantile(factor.vars$Government, .9))
-msg.hi<-setx(model2.z.reduced, MoralStatism=seq(min(factor.vars$MoralStatism),max(factor.vars$MoralStatism), by=.075),
+msg.low<-setx(model2.z.reduced, MoralStatism=quantile(factor.vars$MoralStatism, .1),
+              Government=quantile(factor.vars$Government, .1))
+msg.hi<-setx(model2.z.reduced, MoralStatism=quantile(factor.vars$MoralStatism, .9),
              Government=quantile(factor.vars$Government, .1))
 # 
+msg.out.reduced1 <- sim(model2.z.reduced, x = msg.low)
+msg.out.reduced2 <- sim(model2.z.reduced, x = msg.hi)
 msg.out.reduced <- sim(model2.z.reduced, x = msg.low, x1 = msg.hi)
 # # plot(msg.out.reduced)
 # # summary(msg.out.reduced)
