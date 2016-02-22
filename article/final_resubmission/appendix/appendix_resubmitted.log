@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.10)  22 FEB 2016 16:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.10)  22 FEB 2016 17:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -945,11 +945,11 @@ Package pdftex.def Info: figures/descriptives-1.pdf used on input line 150.
 
 ] [4 <./figures/descriptives-1.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 163.
+(Font)              <10> on input line 202.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 163.
+(Font)              <7> on input line 202.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 163.
+(Font)              <5> on input line 202.
 
 [5
 
@@ -957,7 +957,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 File: figures/bma2-1.pdf Graphic file (type pdf)
 
 <use figures/bma2-1.pdf>
-Package pdftex.def Info: figures/bma2-1.pdf used on input line 339.
+Package pdftex.def Info: figures/bma2-1.pdf used on input line 378.
 (pdftex.def)             Requested size: 423.59439pt x 348.31102pt.
  [8
 
@@ -966,7 +966,7 @@ Package pdftex.def Info: figures/bma2-1.pdf used on input line 339.
 File: figures/bma3-1.pdf Graphic file (type pdf)
 
 <use figures/bma3-1.pdf>
-Package pdftex.def Info: figures/bma3-1.pdf used on input line 347.
+Package pdftex.def Info: figures/bma3-1.pdf used on input line 386.
 (pdftex.def)             Requested size: 423.59439pt x 348.31102pt.
  [10
 
@@ -979,14 +979,14 @@ Package pdftex.def Info: figures/bma3-1.pdf used on input line 347.
 File: figures/missing2-1.pdf Graphic file (type pdf)
 
 <use figures/missing2-1.pdf>
-Package pdftex.def Info: figures/missing2-1.pdf used on input line 414.
+Package pdftex.def Info: figures/missing2-1.pdf used on input line 453.
 (pdftex.def)             Requested size: 403.51266pt x 322.20787pt.
 
 <figures/missing3-1.pdf, id=139, 403.5075pt x 322.20375pt>
 File: figures/missing3-1.pdf Graphic file (type pdf)
 
 <use figures/missing3-1.pdf>
-Package pdftex.def Info: figures/missing3-1.pdf used on input line 420.
+Package pdftex.def Info: figures/missing3-1.pdf used on input line 459.
 (pdftex.def)             Requested size: 403.51266pt x 322.20787pt.
  [13
 
@@ -995,14 +995,14 @@ Package pdftex.def Info: figures/missing3-1.pdf used on input line 420.
 File: figures/missing4-1.pdf Graphic file (type pdf)
 
 <use figures/missing4-1.pdf>
-Package pdftex.def Info: figures/missing4-1.pdf used on input line 428.
+Package pdftex.def Info: figures/missing4-1.pdf used on input line 467.
 (pdftex.def)             Requested size: 403.51266pt x 322.20787pt.
 
 <figures/missing5-1.pdf, id=169, 403.5075pt x 322.20375pt>
 File: figures/missing5-1.pdf Graphic file (type pdf)
 
 <use figures/missing5-1.pdf>
-Package pdftex.def Info: figures/missing5-1.pdf used on input line 434.
+Package pdftex.def Info: figures/missing5-1.pdf used on input line 473.
 (pdftex.def)             Requested size: 403.51266pt x 322.20787pt.
  [15
 
@@ -1011,34 +1011,40 @@ Package pdftex.def Info: figures/missing5-1.pdf used on input line 434.
 File: figures/missing6-1.pdf Graphic file (type pdf)
 
 <use figures/missing6-1.pdf>
-Package pdftex.def Info: figures/missing6-1.pdf used on input line 442.
+Package pdftex.def Info: figures/missing6-1.pdf used on input line 481.
 (pdftex.def)             Requested size: 403.51266pt x 322.20787pt.
  [17
 
  <./figures/missing6-1.pdf>] [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 523.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 562.
  [19
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 523.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 562.
 
 (./appendix_resubmitted.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 523.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 523.
-Package rerunfilecheck Info: File `appendix_resubmitted.out' has not changed.
-(rerunfilecheck)             Checksum: AA054C10D399B613E528A03138E7D7DC;576.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 562.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 562.
 
+
+Package rerunfilecheck Warning: File `appendix_resubmitted.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `appendix_resubmitted.out':
+(rerunfilecheck)             Before: AA054C10D399B613E528A03138E7D7DC;576
+(rerunfilecheck)             After:  C02183AF3B65E56F4354123BC9B0D14E;1029.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 523.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 562.
  ) 
 Here is how much of TeX's memory you used:
- 12312 strings out of 493089
- 178643 string characters out of 6134841
- 285046 words of memory out of 5000000
- 15466 multiletter control sequences out of 15000+600000
- 66355 words of font info for 106 fonts, out of 8000000 for 9000
+ 12322 strings out of 493089
+ 178754 string characters out of 6134841
+ 289046 words of memory out of 5000000
+ 15467 multiletter control sequences out of 15000+600000
+ 66719 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  31i,10n,35p,245b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
@@ -1060,10 +1066,10 @@ t/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
 1/public/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/l
 m/lmri12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.p
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on appendix_resubmitted.pdf (19 pages, 870914 bytes).
+Output written on appendix_resubmitted.pdf (19 pages, 874655 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
+ 287 PDF objects out of 1000 (max. 8388607)
+ 225 compressed objects within 3 object streams
+ 50 named destinations out of 1000 (max. 500000)
  14414 words of extra memory for PDF output out of 17280 (max. 10000000)
 

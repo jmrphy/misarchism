@@ -81,7 +81,7 @@ source("analyses/main_regressions.R")
 
 First, we report results from a factor analysis using the extraction method of maximum likelihood and an oblique rotation.^[An oblique rotation allows for factors to be correlated and is appropriate here because, while we argue that moral statism and anti-governmentalism are unique and distinct, they are likely to be correlated. We use maximum likelihood as the factoring method because it has a more formal statistical basis than other methods and is widely seen to be one of the optimal methods. See [@Fabrigar:1999cq]] We estimate two factors, which a scree plot suggests to be the optimal number.\footnote{See Supplementary Information.} Results of the factor analysis are broadly consistent our argument; attitudes toward policing powers correlate positively with moral traditionalism, in a way distinct from any possible correlation between moral traditionalism and governmentalism. Figure 1 plots the factor loadings of our nine attitudinal variables, with axes labeled to reflect our interpretation of the factors.\footnote{To improve readability, abbreviated variable names and a random jitter of .3 was applied to the width and height of each point on the plot. A numerical table of factor loadings is available in Supplementary Information.} In Figure 1, the horizontal location of a variable reflects the degree to which it loads onto the latent variable we call moral statism, while the vertical location reflects the degree to which it loads onto the latent variable we call governmentalism.
 
-As Figure 1 reveals, attitudes toward policing powers as well as morally traditional attitudes are correlated with Factor 1 (clustered in the bottom-right). Attitudes toward traditional government interventions in society are positively correlated with Factor 2. Factor 1, which appears to capture a governmentalist dimension in public attitudes, explains 15% of the overall variance while Factor 2, reflecting moral statism, explains 14%. *Morals*, *Immigration*, and *Conservatism* are only weakly negatively correlated with the governmentalism factor, while the governemntalist attitudes are not positively or negatively correlated with moral statism factor to any significant degree. The key implication of the factor analysis is that moral traditionalism and policing powers are correlated along a dimension irreducible to anti-govermentalism, suggesting that the conventional wisdom about the ideology of libertarianism may incorrectly conflate two distinct ideological patterns.
+As Figure 1 reveals, attitudes toward policing powers as well as morally traditional attitudes are correlated with Factor 1 (clustered in the bottom-right). Attitudes toward traditional government interventions in society are positively correlated with Factor 2. Factor 1, which appears to capture a governmentalist dimension in public attitudes, explains 15% of the overall variance while Factor 2, reflecting moral statism, explains 14%. *Morals*, *Immigration*, and *Conservatism* are only weakly negatively correlated with the governmentalism factor, while the governemntalist attitudes are not positively or negatively correlated with moral statism factor to any significant degree. The key implication of the factor analysis is that moral traditionalism and policing powers are correlated along a dimension irreducible to anti-governmentalism, suggesting that the conventional wisdom about the ideology of libertarianism may incorrectly conflate two distinct ideological patterns.
 
 
 ```{r factorplot, fig.height=6, fig.width=6, fig.cap="Factor Plot Shows Two Main Dimensions", warning=FALSE, echo=FALSE, message=FALSE, error=FALSE}
@@ -104,7 +104,7 @@ ggplot(explore.subset, aes(x=Government, y=MoralStatism)) +
 
 ```
 
-Do the latent ideological variables of governmentalism and moral statism help improve our understanding of support for the Tea Party? Table 1 shows results from two logistic regressions modeling the probability that an individual will support the Tea Party. Before analysis, each independent variable was centered to a mean of zero and divided by two standard deviations, including the factor scores, so that all coefficients can be interpreted as the expected change in the log-odds of supporting the Tea Party associated with a two-standard-deviation change in the independent variable (or a one-category change in the case of a categorical variable). Model 1 is a baseline model including predictors from previous research and standard demographic control variables. Model 2 adds each of the latent variables and a term representing the multiplicative interaction of the two. Model 3, for reasons discussed below, is the same as Model 2 but estimated only on the subset of respondents who identify as some degree of "conservative" on the traditional ideological self-placement scale.
+Do the latent ideological variables of governmentalism and moral statism help improve our understanding of support for the Tea Party? Table 1 shows results from three logistic regressions modeling the probability that an individual will support the Tea Party. Before analysis, each independent variable was centered to a mean of zero and divided by two standard deviations, including the factor scores, so that all coefficients can be interpreted as the expected change in the log-odds of supporting the Tea Party associated with a two-standard-deviation change in the independent variable (or a one-category change in the case of a categorical variable). Model 1 is a baseline model including predictors from previous research and standard demographic control variables. Model 2 adds each of the latent variables and a term representing the multiplicative interaction of the two. Model 3, for reasons discussed below, is the same as Model 2 but estimated only on the subset of respondents who identify as some degree of "conservative" on the traditional ideological self-placement scale.
 
 To begin, consider the argument of Parker and Barretto that opposition to Barack Obama is a key driver of Tea Party support. Given a typical respondent who hypothetically drops from the 90th percentile of positive feelings toward Obama to the 10th, we would expect the probability of them supporting the Tea Party to change by about `r round(mean(o.out$qi$fd),3)*100`% (sd=`r round(sd(o.out$qi$fd),3)*100`), from a baseline of `r round(mean(o.out.hi$qi$ev),3)` to `r round(mean(o.out.low$qi$ev),3)` on average.^[All discussion of effect sizes refer to 1000 simulations of Model 2 in Table 1 using the R package *Zelig*. See [@ZeligEveryonesSt:2009ts].]
 
@@ -139,7 +139,7 @@ stargazer(model1, model2, model2.cons, header=FALSE, font.size="footnotesize", n
 \doublespacing
 
 
-```{r effect-plot1, cache=FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height=4, fig.width=5, fig.cap="The Effect of Moral Statism Conditional on Govermentalism (Gov)"}
+```{r effect-plot1, cache=FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height=4, fig.width=5, fig.cap="The Effect of Moral Statism Conditional on Governmentalism (Gov)"}
 
 require(visreg)
 
@@ -152,7 +152,7 @@ visreg(model2, "MoralStatism", by="Gov", overlay=T, scale="response", breaks=c(-
 
 ```
 
-```{r effect-plot2, cache=FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height=4, fig.width=5, fig.cap="The Effect of Moral Statism Conditional on Govermentalism (Gov)"}
+```{r effect-plot2, cache=FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height=4, fig.width=5, fig.cap="The Effect of Moral Statism Conditional on Governmentalism (Gov) for Conservatives Only"}
 
 visreg(model2.cons, "MoralStatism", by="Gov", overlay=T, scale="response", breaks=c(-1,0,1),
        line=list(lty=c(1,2,3)))
@@ -278,7 +278,7 @@ stargazer(model2.noideology,
 
 ```
 
-Individuals characterized by the highest observed levels of moral statism also in the 90th percentile of anti-governmentalism (below a value of -.7 on the governmentalism factor) have a probability of supporting the Tea Party around 40%. To be more precise, moving from minimum to maxium moral statism while in the 10th percentile of governmentalism increases the probability of supporting the Tea Party by .39 (sd=.07) more than it would in the 90th percentile of govermentalism, from .01 (sd=.00) to .42, (sd=.07) rather than .05 (sd=.02) to .03 (sd=.02).
+Individuals characterized by the highest observed levels of moral statism also in the 90th percentile of anti-governmentalism (below a value of -.7 on the governmentalism factor) have a probability of supporting the Tea Party around 40%. To be more precise, moving from minimum to maxium moral statism while in the 10th percentile of governmentalism increases the probability of supporting the Tea Party by .39 (sd=.07) more than it would in the 90th percentile of governmentalism, from .01 (sd=.00) to .42, (sd=.07) rather than .05 (sd=.02) to .03 (sd=.02).
 
 \clearpage
 

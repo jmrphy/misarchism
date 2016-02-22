@@ -87,9 +87,11 @@ Additional information on Factor Analysis
 \item
   Numerical factor loadings
 \item
+Correlation Plot for Different Dimensions of Right-Wing Attitudes
+\item
   Including Party ID as a covariate
 \item
-  Estimated effects of misarchism on Party ID and Conservatism
+  Does Misarchism Also Predict Republican Party Identification or Conservatism?
 \item
 Bayesian Model Averaging
 \item
@@ -109,12 +111,12 @@ We used an oblique rotation which allows for factors to be correlated. This is
   it has a more formal statistical basis than other methods and is
   widely seen as one of the optimal methods. See Fabrigar et al. (1999). We estimate two factors, which a scree plot (below) suggests to be the optimal number.
   
-  For \emph{N} equal to 5914, a chi-square test of the hypothesis that two factors is
-  sufficient is equal to 900.727 with a p-value of 0, suggesting that
-  two factors are not sufficient, as we would expect. That said, the
-  root mean square of the residuals is 0.044 and the Tucker-Lewis Index
-  for factor reliability score is 0.869, both of which are near the
-  conventional cutoffs of .05 and .9, respectively.
+For \emph{N} equal to 5914, a chi-square test of the null hypothesis that
+  two factors are sufficient is equal to 878 with a p-value of 0,
+  suggesting that two factors are not sufficient, as we would expect.
+  That said, the root mean square of the residuals is 0.05 and the
+  Tucker-Lewis Index for factor reliability score is 0.8, both of which
+  are near the conventional cutoffs of .05 and .9, respectively.
 
 \begin{figure}[htbp]
 \centering
@@ -145,16 +147,55 @@ Family & 0.03 & 0.59 \\
 \label{Factor Loadings}
 \end{table}
 
+\clearpage
+
 \begin{figure}[htbp]
 \centering
 \includegraphics{figures/descriptives-1.pdf}
-\caption{Correlation plot for different dimensions of right-wing
-attitudes}
+\caption{Correlation Plot for Different Dimensions of Right-Wing Attitudes}
 \end{figure}
 
 
-
 \clearpage
+
+\subsubsection{Does Misarchism Also Predict Republican Party Identification or Conservatism?}\label{alternative-dvs}
+
+Does the misarchist interaction of moral statism and
+anti-governmentalism also drive Republican Party identification and/or
+conservative identification? The answer matters for understanding how
+these model results improve our understanding of American conservatism.
+If a misarchist perspective is associated with Republican Party
+identification or identification with conservatism in general, our
+findings may only reflect a substrate of American conservatism but not
+necessarily Tea Party support per se. To check this possibility, we run
+two additional models similar to Model 2 but using ordinary least
+squares estimation with \emph{PartyID} and \emph{Conservatism} on the
+left-hand side of the model equation instead of the right-hand side. To
+save space, we provide only a brief discussion of the results here, with
+full model results available in the Supplementary Information. Moral
+statism positively predicts and governmentalism negatively predicts
+Republican identification with high levels of statistical significance,
+but the coefficient for the interaction term is nearly zero and
+statistically insignificant. On the other hand, considering conservative
+self-identification as the dependent variable, while both moral statism
+and governmentalism are again signed as expected, the interaction term
+is positive and significant. These results suggest that the misarchist
+interaction of moral statism and anti-governmentalism is positively
+associated with Tea Party support in a fashion irreducible to simple
+Republican Party identification or conservative identification. A
+substantive interpretation consistent with these auxiliary models is
+that the Republican Party is home to morally statist as well as
+anti-government and pro-government attitudes (a ``broad church''
+encompassing various forms of conservatism). On the other hand, the Tea
+Party is uniquely associated with the combination of morally statist and
+anti-government attitudes whereas simple ``conservatism'' is uniquely
+associated with morally statist and pro-government attitudes. Because
+these are not our primary, theoretically motivated arguments, caution
+should be exercised in making inferences from these auxilliary models.
+Nonetheless, they strengthen support for our argument and contradict the
+common interpretation of Tea Party supporters as simply extreme
+conservatives or extreme Republicans.
+
 
 \begin{table}[!htbp] \centering 
   \caption{Alternative Dependent Variables for Model 2} 
