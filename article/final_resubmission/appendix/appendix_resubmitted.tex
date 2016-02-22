@@ -454,11 +454,11 @@ unless some unobserved factor shapes the propensity to be treated.
 Although the possibility of omitted variables can never be ruled out, we
 can quantify the sensitivity of these matching estimates to some
 potential unobserved source of bias. Thus, we also report sensitivity
-bounds as developed by Rosenbaum (1988).
+bounds as developed by Rosenbaum (1988), using the R package \emph{rbounds} (Keele 2014).
 
 We generate matching estimates for the effect of governmentalism and the
 interaction term, one at a time, using one-to-one genetic matching with
-replacement. We ignore moral statism because the main analyses suggest
+replacement (Sekhon 2011). We ignore moral statism because the main analyses suggest
 it does not have an independent effect. In each case, ``treatment'' is
 defined as having a value above the sample mean of the variable of
 interest. For each estimate, we balance on all covariates in Model 2
@@ -511,6 +511,13 @@ Averaging: Theoretical Developments and Practical Applications.''
 
 Raftery, Adrian E., Jennifer Hoeting, Chris Volinksy, Ian Painter, and Ka Yee Yeung. 2015. ``BMA: Bayesian Model Averaging.''
 \url{https://cran.r-project.org/web/packages/BMA/}.
+
+Rosenbaum, Paul R. 1988. ``Sensitivity Analysis for Matching with
+Multiple Controls.'' \emph{Biometrika} 75(3): 577--81.
+
+Sekhon, Jasjeet S. 2011. ``Multivariate and Propensity Score Matching
+Software with Automated Balance Optimization: The Matching Package for
+R.'' \emph{Journal of Statistical Software} 42(7).
 
 
 \end{document}
