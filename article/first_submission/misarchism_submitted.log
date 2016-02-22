@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 FEB 2016 12:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.10)  22 FEB 2016 14:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -959,16 +959,12 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 992.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 992.
 Package rerunfilecheck Info: File `misarchism_submitted.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 992.
  ) 
 Here is how much of TeX's memory you used:
  12304 strings out of 493089
- 178184 string characters out of 6134842
- 279568 words of memory out of 5000000
+ 178184 string characters out of 6134841
+ 279846 words of memory out of 5000000
  15427 multiletter control sequences out of 15000+600000
  59965 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191

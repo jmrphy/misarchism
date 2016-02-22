@@ -39,14 +39,18 @@ model2.cons<-glm(Support ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x 
             family=binomial,
             data=subset(factor.vars, libcpre_self>mean(libcpre_self)))
 
-# summary(model2)
-# require(car)
-# vif(model2)
+model2.cons.z<-zelig(Support ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
+                  white + dem_edu + Obama + Auth + bornagain + 
+                  church + republican + fox + libcpre_self + MoralStatism + Gov + MoralStatism:Gov,
+                model="logit",
+                data=subset(factor.vars, libcpre_self>mean(libcpre_self)),
+                cite=F)
+
+# summary(model2.cons.z)
 
 # model2classif<-table(model2$fitted.values>.5, model2$y)
 # model2correct<-(model2classif[1,1] + model2classif[2,2])
 #  (model2correct/nrow(factor.vars))*100
-
 
 model2.z<-zelig(Support ~ gender_respondent_x + inc_incgroup_pre + dem_age_r_x +
                   white + dem_edu + Obama + Auth + bornagain + 
@@ -132,6 +136,25 @@ ms.hi.g.low.out <- sim(model2.z, x = ms.hi.g.low)
 msgout2 <- sim(model2.z, x = ms.low.g.low, x1 = ms.hi.g.low)
 
 
+# MS*G Effect calculation for Cons only
+
+# MS shift when people like government
+ms.low.g.hi.cons<-setx(model2.cons.z, Gov=quantile(factor.vars$Gov, .9), MoralStatism=quantile(factor.vars$MoralStatism, .1))
+ms.low.g.hi.out.cons <- sim(model2.cons.z, x = ms.low.g.hi.cons)
+
+ms.hi.g.hi.cons<-setx(model2.cons.z, Gov=quantile(factor.vars$Gov, .9), MoralStatism=quantile(factor.vars$MoralStatism, .9))
+ms.hi.g.hi.out.cons <- sim(model2.cons.z, x = ms.hi.g.hi.cons)
+
+msgout1.cons <- sim(model2.cons.z, x = ms.low.g.hi.cons, x1 = ms.hi.g.hi.cons)
+
+# MS shift when people don't like government
+ms.low.g.low.cons<-setx(model2.cons.z, Gov=quantile(factor.vars$Gov, .1), MoralStatism=quantile(factor.vars$MoralStatism, .1))
+ms.low.g.low.out.cons <- sim(model2.cons.z, x = ms.low.g.low.cons)
+
+ms.hi.g.low.cons<-setx(model2.cons.z, Gov=quantile(factor.vars$Gov, .1), MoralStatism=quantile(factor.vars$MoralStatism, .9))
+ms.hi.g.low.out.cons <- sim(model2.cons.z, x = ms.hi.g.low.cons)
+
+msgout2.cons <- sim(model2.cons.z, x = ms.low.g.low.cons, x1 = ms.hi.g.low.cons)
 
 # Most likely model according to BMA?
 model2.z.reduced<-zelig(tea_supp ~ Obama + fox +inc_incgroup_pre + dem_age_r_x +
