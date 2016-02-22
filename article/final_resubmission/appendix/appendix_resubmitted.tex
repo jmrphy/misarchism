@@ -364,7 +364,7 @@ cell. After multiple imputation, the models discussed above are
 re-estimated on each imputed dataset and the results are combined using
 ``Rubin's rules.'' Specifically, we use the R package \emph{Amelia}
 (Honaker, King, and Blackwell 2008) to generate 10 versions of the ANES
-dataset with missing values imputed and \emph{Zelig} to obtain pooled
+dataset with missing values imputed and \emph{Zelig} (Imai, King, and Lau 2009) to obtain pooled
 regression results. The multiple imputation algorithm only assumes that
 missing values are ``missing at random,'' not necessarily ``missing
 completely at random.'' In this context, ``missing at random'' only
@@ -493,6 +493,13 @@ main covariates making individuals more likely to be misarchist.
 Fabrigar, Leandre R, Duane T Wegener, Robert C MacCallum, and Erin J
 Strahan. 1999. ``Evaluating the use of exploratory factor analysis in
 psychological research.'' \emph{Psychological Methods} 4(3): 272--99.
+
+Honaker, James, Gary King, and Matthew Blackwell. 2008. ``Amelia II: A
+Program for Missing Data.'' \emph{Journal of Statistical Software}
+45(i07).
+
+Imai, Kosuke, Gary King, and Olivia Lau. 2009. ``Zelig: Everyone's
+Statistical Software.'' \url{http://gking.harvard.edu/zelig}.
 
 Keele, Luke J. 2014. ``rbounds: Perform Rosenbaum bounds sensitivity
 tests for matched and unmatched data.''
