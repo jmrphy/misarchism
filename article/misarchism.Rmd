@@ -84,7 +84,7 @@ First, we report results from a factor analysis using the extraction method of m
 As Figure 1 reveals, attitudes toward policing powers as well as morally traditional attitudes are correlated with Factor 1 (clustered in the bottom-right). Attitudes toward traditional government interventions in society are positively correlated with Factor 2. Factor 1, which appears to capture a governmentalist dimension in public attitudes, explains 15% of the overall variance while Factor 2, reflecting moral statism, explains 14%. *Morals*, *Immigration*, and *Conservatism* are only weakly negatively correlated with the governmentalism factor, while the governemntalist attitudes are not positively or negatively correlated with moral statism factor to any significant degree. The key implication of the factor analysis is that moral traditionalism and policing powers are correlated along a dimension irreducible to anti-governmentalism, suggesting that the conventional wisdom about the ideology of libertarianism may incorrectly conflate two distinct ideological patterns.
 
 
-```{r factorplot, fig.height=6, fig.width=6, fig.cap="Factor Plot Shows Two Main Dimensions", warning=FALSE, echo=FALSE, message=FALSE, error=FALSE}
+```{r factorplot, fig.height=4.5, fig.width=4.5, fig.cap="Factor Plot Shows Two Main Dimensions", warning=FALSE, echo=FALSE, message=FALSE, error=FALSE}
 factor.plot
 ```
 
@@ -92,7 +92,7 @@ It is important to note that we should not expect adequate overall model fit, fo
 
 What are the distributions of moral statism and governmentalism across our sample of individuals? How do these constructs comport with what is traditionally called conservatism? If it seems counter-intuitive for individuals to oppose government while supporting the state, this is only because popular conceptions of ideology have not given us the conceptual resources to disentangle these components. Figure 2 illustrates the relationship between these two factors, across the seven ordinal categories of the traditional ideology measure (*Conservatism*). The shaded rectangle represents misarchism: individuals with negative scores on the *Government* factor (i.e. libertarian) but positive scores on the *Moral Statism* factor. Figure 2 reveals a few points of interest. Firest, *Moral Statism* and *Government* are negatively correlated, highlighting the descriptive significance of disaggregating attitudes toward government and the state. It is not even that popular conceptions of libertarianism ignore ideological constellations "off the diagonal" of correlated attitudes toward government and the state; they are positively misleading about the direction of the correlation.^[This is not an artifact of the factor model. The correlation plot illustrating correlations among all of the variables entered into the factor model leads to the same description (with the exception of *Wiretapping,* which does not load strongly on either factor): The individual attitudes toward government are negatively correlated with the attitudes toward morality and the attitudes toward state power. See Supplementary Information.] Second, misarchism is correlated with the traditional concept of conservatism and most of the strong misarchists are conservatives, although misarchism is not unique to conservatives. Indeed, the third point to note about Figure 2 is that a degree of misarchism characterizes a non-trivial fraction of the sample in general, including those in the center and somewhat liberal categories of the traditional ideology variable.
 
-```{r exploratoryplot, fig.height=6, fig.width=6, fig.cap="Governmentalism and Moral Statism by Levels of Conservatism (Shaded Rectangle Represents Misarchism)", warning=FALSE, echo=FALSE, message=FALSE, error=FALSE}
+```{r exploratoryplot, fig.height=4.5, fig.width=6, fig.cap="Governmentalism and Moral Statism by Levels of Conservatism (Shaded Rectangle Represents Misarchism)", warning=FALSE, echo=FALSE, message=FALSE, error=FALSE}
 
 ggplot(explore.subset, aes(x=Government, y=MoralStatism)) +
   geom_point() +
@@ -142,8 +142,6 @@ stargazer(model1, model2, model2.cons, header=FALSE, font.size="footnotesize", n
 ```{r effect-plot1, cache=FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height=4, fig.width=5, fig.cap="The Effect of Moral Statism Conditional on Governmentalism (Gov)"}
 
 require(visreg)
-
-source("~/Dropbox/code/multiplot.R")
 
 visreg(model2, "MoralStatism", by="Gov", overlay=T, scale="response", breaks=c(-1,0,1),
        line=list(lty=c(1,2,3)))

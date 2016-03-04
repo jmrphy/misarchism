@@ -81,17 +81,21 @@
 \def\labelenumi{\arabic{enumi}.}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-Additional information on Factor Analysis
+Additional Information on Factor Analysis
 \item
-  Scree plot for factor model
+  Scree Plot for Factor Model
 \item
-  Numerical factor loadings
+Correlation Plot for Variables Included in Factor Model
+\item
+  Numerical Factor Loadings
 \item
 Correlation Plot for Different Dimensions of Right-Wing Attitudes
 \item
-  Including Party ID as a covariate
-\item
   Does Misarchism Also Predict Republican Party Identification or Conservatism?
+\item
+ Alternative Dependent Variables for Model 2 (Party ID and Conservatism)
+ \item
+ Including Ideology in Factor Model and Removing from Regression Model
 \item
 Bayesian Model Averaging
 \item
@@ -102,7 +106,7 @@ Matching and Sensitivity
 References
 \end{enumerate}
 
-Additional information on Factor Analysis
+\subsubsection{Additional Information on Factor Analysis}
 
 We used an oblique rotation which allows for factors to be correlated. This is
   appropriate here because, while we argue that moral statism and
@@ -117,7 +121,8 @@ For \emph{N} equal to 5914, a chi-square test of the null hypothesis that
   That said, the root mean square of the residuals is 0.05 and the
   Tucker-Lewis Index for factor reliability score is 0.8, both of which
   are near the conventional cutoffs of .05 and .9, respectively.
-
+ 
+  
 \begin{figure}[htbp]
 \centering
 \includegraphics{figures/scree-1.pdf}
@@ -126,11 +131,19 @@ For \emph{N} equal to 5914, a chi-square test of the null hypothesis that
 
 \clearpage
 
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/corrplot1-1.pdf}
+\caption{Correlation Plot for Variables Included in Factor Model}
+\end{figure}
+
+\clearpage
+
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrr}
   \hline
- & ML1 & ML2 \\ 
+ & Governmentalism & Moral Statism \\ 
   \hline
 Family & 0.03 & 0.59 \\ 
   Guns & 0.40 & -0.05 \\ 
@@ -144,14 +157,14 @@ Family & 0.03 & 0.59 \\
    \hline
 \end{tabular}
 \caption{Factor Loadings} 
-\label{Factor Loadings}
+\label{Factor Loadings From Main Factor Analysis}
 \end{table}
 
 \clearpage
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{figures/descriptives-1.pdf}
+\includegraphics{figures/corrplot2-1.pdf}
 \caption{Correlation Plot for Different Dimensions of Right-Wing Attitudes}
 \end{figure}
 
@@ -256,7 +269,7 @@ F Statistic (df = 14; 2391) & 354.000$^{***}$ & 187.000$^{***}$ \\
 
 
 \begin{table}[!htbp] \centering 
-  \caption{Including ideology in factor model and removing from regression model} 
+  \caption{Including Ideology in Factor Model and Removing From Regression Model} 
   \label{} 
 \footnotesize 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 
@@ -266,45 +279,46 @@ F Statistic (df = 14; 2391) & 354.000$^{***}$ & 187.000$^{***}$ \\
 \cline{2-2} 
 \\[-1.8ex] & Tea Party Support \\ 
 \hline \\[-1.8ex] 
- Gender (Male) & 0.116 \\ 
+ Gender (Male) & 0.128 \\ 
   & (0.128) \\ 
-  Income & $-$0.301$^{**}$ \\ 
-  & (0.148) \\ 
-  Age & $-$0.343$^{**}$ \\ 
+  Income & $-$0.321$^{**}$ \\ 
+  & (0.147) \\ 
+  Age & $-$0.379$^{***}$ \\ 
   & (0.144) \\ 
-  Race (White) & $-$0.404$^{**}$ \\ 
-  & (0.169) \\ 
-  Education & 0.066 \\ 
+  Race (White) & $-$0.453$^{***}$ \\ 
+  & (0.167) \\ 
+  Education & 0.058 \\ 
   & (0.158) \\ 
-  Obama & $-$1.250$^{***}$ \\ 
+  Obama & $-$1.300$^{***}$ \\ 
   & (0.222) \\ 
-  Authoritarianism & 0.035 \\ 
-  & (0.148) \\ 
-  BornAgain & 0.298$^{**}$ \\ 
-  & (0.135) \\ 
+  Authoritarianism & 0.028 \\ 
+  & (0.147) \\ 
+  BornAgain & 0.296$^{**}$ \\ 
+  & (0.134) \\ 
   Religion & $-$0.013 \\ 
-  & (0.155) \\ 
-  PartyID (Republican) & 0.512$^{**}$ \\ 
-  & (0.199) \\ 
+  & (0.154) \\ 
+  PartyID (Republican) & 0.435$^{**}$ \\ 
+  & (0.198) \\ 
   FoxNews & 0.707$^{***}$ \\ 
   & (0.133) \\ 
-  MoralStatism & $-$0.556$^{**}$ \\ 
-  & (0.261) \\ 
-  Government & 0.923$^{***}$ \\ 
-  & (0.276) \\ 
-  MoralStatism*Government & 1.380$^{***}$ \\ 
+  MoralStatism & 0.708$^{**}$ \\ 
+  & (0.283) \\ 
+  Governmentalism & $-$0.799$^{***}$ \\ 
   & (0.268) \\ 
-  Constant & $-$2.700$^{***}$ \\ 
-  & (0.214) \\ 
+  MoralStatism*Governmentalism & $-$1.230$^{***}$ \\ 
+  & (0.332) \\ 
+  Constant & $-$2.520$^{***}$ \\ 
+  & (0.206) \\ 
  \hline \\[-1.8ex] 
 Observations & 2,406 \\ 
-Log Likelihood & $-$830.000 \\ 
-Akaike Inf. Crit. & 1,690.000 \\ 
+Log Likelihood & $-$835.000 \\ 
+Akaike Inf. Crit. & 1,701.000 \\ 
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \end{table}
+
 
 Individuals characterized by the highest observed levels of moral
 statism also in the 90th percentile of anti-governmentalism (below a
@@ -320,7 +334,7 @@ govermentalism, from .01 (sd=.00) to .42, (sd=.07) rather than .05
 
 \subsubsection{Bayesian Model Averaging}\label{bayesian-model-averaging}
 
-regression results such as those presented above are sometimes sensitive
+Regression results such as those presented above are sometimes sensitive
 to minor differences in model specification, such as including or
 excluding one variable. One risk is publication bias, if researchers
 prefer models that confirm their hypotheses. Another is loss of
@@ -340,22 +354,21 @@ to enter or not enter models together.\footnote{Options were set to be
   least restrictive. No Occam's Window was used to narrow the models
   selected by the initial leap algorithm run over the entire model space
   and, following Montgomery and Nyhan (pp.~21), the number of best
-  models of each size returned by the leaps algorithm was set to 100,000}
+  models of each size returned by the leaps algorithm was set to 100,000.}
 In the end, 8,192 models were selected.
 
 The results show that the misarchist terms are highly robust to model
 selection, with a posterior probability of inclusion equal to 100\% (one
 minus the cumulative posterior probability of all models excluding
 them). The expected value of the coefficient for \emph{MoralStatism} is
--0.16 (sd=.26), suggesting it has no independent effect. for
+-0.16 (sd=.26), suggesting it has no independent effect. For
 \emph{Governmentalism} it is -.76 (sd=.25), and for the interaction term
 it is -1.07 (sd=.31). \emph{Obama}, \emph{FoxNews}, and
 \emph{Conservatism} also had probabilities of inclusion equal to 100\%
 with signs consistent with Model 2. \emph{Age}, \emph{Race}, and
 \emph{BornAgain} had probabilities of inclusion greater than 25\% but
 did not show expected values statistically distinguishable from zero.
-All other variables had probabilities of inclusion less than 50\%. More
-detailed graphical information is reported in Supplementary Information.
+All other variables had probabilities of inclusion less than 50\%.
 
 In the main models reported above, we have consciously chosen to include
 a large number of control variables because we are presently most
@@ -412,9 +425,8 @@ completely at random.'' In this context, ``missing at random'' only
 means that missingness is dependent on the observed variables.
 
 After pooling the results, the estimates remain substantially the same.
-\emph{MoralStatism}, \emph{Governmentalism}, and the interaction term
-remain signed as in Model 2 with high statistical significance (.98,
-p\textless{}.00; -.68, p\textless{}.00; -1.35, p\textless{}.00,
+\emph{Governmentalism} and the interaction term
+remain signed as in Model 2 with high statistical significance (-.86, p\textless{}.00; -.85, p\textless{}.00,
 respectively). \emph{FoxNews} and \emph{BornAgain} also remain
 substantially the same. Graphical diagnostics for overimputation,
 dispersion, and comparing pre- and post-imputation densities for our
